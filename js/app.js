@@ -4,7 +4,10 @@
  * Philosophy: LESS, BUT BETTER.
  */
 
+let lenis;
+
 document.addEventListener('DOMContentLoaded', () => {
+  initLenis();
   initNavbar();
   initCounters();
   initScrollReveals();
@@ -18,6 +21,56 @@ document.addEventListener('DOMContentLoaded', () => {
   initAssessmentModal();
   initMobileDrawer();
 });
+
+/* ==========================================================================
+   0. LENIS ULTRA-LUXURY SMOOTH SCROLL
+   ========================================================================== */
+function initLenis() {
+  if (typeof Lenis !== 'undefined') {
+    lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 1.5,
+      infinite: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Sync navbar scroll state with Lenis scroll
+    lenis.on('scroll', (e) => {
+      const navbar = document.querySelector('.navbar');
+      if (navbar) {
+        if (e.scroll > 40) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+    });
+
+    // Smooth scroll for internal navigation links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href && href !== '#' && href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            lenis.scrollTo(target, { offset: -70, duration: 1.2 });
+          }
+        }
+      });
+    });
+  }
+}
 
 /* ==========================================================================
    1. NAVBAR SCROLL & ACTIVE STATES
