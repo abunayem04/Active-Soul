@@ -23,7 +23,7 @@
   --accent-lime: #B6FF00;
   --accent-lime-hover: #C5FF2E;
   --accent-lime-soft: #E8FFB8;
-  --accent-lime-glow: rgba(182, 255, 0, 0.28);
+  --accent-lime-glow: transparent;
   
   /* Borders & Hairlines */
   --border-light: #E5E5E5;
@@ -57,7 +57,7 @@
   /* Shadows (Minimal & Precise) */
   --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
   --shadow-hover: 0 12px 36px rgba(0, 0, 0, 0.08);
-  --shadow-lime: 0 10px 30px rgba(182, 255, 0, 0.35);
+  --shadow-lime: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 /* --- 2. RESET & BASE --- */
@@ -204,7 +204,6 @@ ul, ol {
   background-color: var(--accent-lime);
   border-radius: 50%;
   display: inline-block;
-  box-shadow: 0 0 10px var(--accent-lime);
 }
 
 .eyebrow-dark {
@@ -278,8 +277,8 @@ ul, ol {
   background-color: #0A0A0A;
   color: var(--accent-lime);
   border-color: #0A0A0A;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22), 0 0 25px var(--accent-lime-glow);
-  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
 }
 
 .btn-primary:hover .btn-arrow {
@@ -303,8 +302,8 @@ ul, ol {
   background-color: var(--accent-lime);
   color: #0A0A0A;
   border-color: var(--accent-lime);
-  box-shadow: var(--shadow-lime);
-  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
 }
 
 .btn-secondary:hover .btn-arrow {
@@ -323,8 +322,8 @@ ul, ol {
   background-color: var(--accent-lime);
   color: #0A0A0A;
   border-color: var(--accent-lime);
-  box-shadow: 0 10px 30px rgba(182, 255, 0, 0.45);
-  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
 }
 
 .btn-on-dark:hover .btn-arrow {
@@ -540,8 +539,7 @@ ul, ol {
 }
 
 .brand-logo:hover .brand-logo-img {
-  transform: scale(1.08) rotate(2deg);
-  filter: drop-shadow(0 4px 14px var(--accent-lime-glow));
+  transform: scale(1.05);
 }
 
 .nav-menu {
