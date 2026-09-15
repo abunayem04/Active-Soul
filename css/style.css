@@ -374,6 +374,17 @@ ul, ol {
   user-select: none;
 }
 
+.brand-logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform var(--transition-fast);
+}
+
+.brand-logo:hover .brand-logo-img {
+  transform: scale(1.08);
+}
+
 .brand-mark {
   width: 26px;
   height: 26px;
