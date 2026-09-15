@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Active Soul — Human Performance & Athletic System</title>
+  <meta name="description" content="Active Soul is a precision-engineered human performance system. Editorial athletic training, personalized programming, and biometric tracking designed for those who train with purpose.">
+  <meta name="keywords" content="athletic performance, fitness system, running coach, strength training, biometric tracking, active soul">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Active Soul — Human Performance & Athletic System">
+  <meta property="og:description" content="Build your strongest self. Precision athletic training and biometric tracking.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Bebas Neue, Inter, Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. MINIMAL NAVBAR
+       ========================================================================== -->
+  <header class="navbar" id="siteNavbar">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" aria-label="Active Soul Home">
+        <span class="brand-mark">
+          <span class="brand-mark-inner"></span>
+        </span>
+        ACTIVE SOUL
+      </a>
+
+      <!-- Center Desktop Navigation -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="#goals" class="nav-link">Training</a>
+        <a href="#programs" class="nav-link">Programs</a>
+        <a href="#system" class="nav-link">Methodology</a>
+        <a href="#coaches" class="nav-link">Coaches</a>
+        <a href="#results" class="nav-link">Results</a>
+        <a href="#technology" class="nav-link">Technology</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="nav-cta-wrapper">
+        <button class="btn btn-primary" data-trigger-assessment id="navCtaBtn">
+          START TRAINING
+          <span class="btn-arrow">→</span>
+        </button>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Open mobile navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-list">
+      <a href="#goals" class="mobile-nav-link">TRAINING</a>
+      <a href="#programs" class="mobile-nav-link">PROGRAMS</a>
+      <a href="#system" class="mobile-nav-link">METHODOLOGY</a>
+      <a href="#coaches" class="mobile-nav-link">COACHES</a>
+      <a href="#results" class="mobile-nav-link">RESULTS</a>
+      <a href="#technology" class="mobile-nav-link">TECHNOLOGY</a>
+      <a href="#pricing" class="mobile-nav-link">PRICING</a>
+    </div>
+    <div class="mobile-drawer-bottom">
+      <button class="btn btn-primary" data-trigger-assessment style="width: 100%;">
+        START TRAINING →
+      </button>
+      <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: 1.5rem; text-transform: uppercase;">
+        SYSTEM 01 // 2026 EDITION
+      </p>
+    </div>
+  </aside>
+
+  <!-- Main Content Landmark -->
+  <main>
+
+    <!-- ==========================================================================
+         2. HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-watermark">PERFORMANCE</div>
+      
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Left Column: Editorial Copy & CTAs -->
+          <div class="hero-content">
+            <div class="eyebrow hero-eyebrow">
+              <span class="dot"></span>
+              SYSTEM 01 // HUMAN PERFORMANCE LAB
+            </div>
+
+            <h1 class="display-title hero-headline">
+              <span class="hero-headline-line">BUILD YOUR</span>
+              <span class="hero-headline-line">STRONGEST</span>
+              <span class="hero-headline-line">SELF.</span>
+            </h1>
+
+            <p class="hero-copy">
+              We reject fitness fads. Active Soul is a precision-engineered human performance system built to elevate physical capacity, aerobic threshold, and everyday discipline.
+            </p>
+
+            <div class="hero-actions">
+              <button class="btn btn-primary" data-trigger-assessment id="heroPrimaryCta">
+                START YOUR JOURNEY
+                <span class="btn-arrow">→</span>
+              </button>
+              <a href="#programs" class="btn btn-secondary">
+                EXPLORE PROGRAMS
+              </a>
+            </div>
+
+            <div class="hero-status-pill">
+              <span class="live-indicator"></span>
+              <span>10,480+ ATHLETES LOGGING SESSIONS WORLDWIDE</span>
+            </div>
+          </div>
+
+          <!-- Hero Right Column: Transparent Runner Cutout + Telemetry Badges -->
+          <div class="hero-visual-col">
+            <div class="hero-runner-wrapper">
+              <img 
+                src="photo/hero_runner.png" 
+                alt="Elite athlete running in performance gear with high cadence" 
+                class="hero-runner-img"
+                width="620"
+                height="800"
+              >
+
+              <!-- Floating Telemetry HUD Card 1 -->
+              <div class="hero-hud-card hud-heartrate" aria-hidden="true">
+                <div class="hud-icon-box lime">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="hud-meta-label">AEROBIC OUTPUT</div>
+                  <div class="hud-meta-val">164 <span style="font-size: 0.75rem; font-weight: 500;">BPM // ZONE 4</span></div>
+                </div>
+              </div>
+
+              <!-- Floating Telemetry HUD Card 2 -->
+              <div class="hero-hud-card hud-cadence" aria-hidden="true">
+                <div class="hud-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <div class="hud-meta-label">RUN CADENCE</div>
+                  <div class="hud-meta-val">182 <span style="font-size: 0.75rem; font-weight: 500;">SPM</span></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. TRUST & PERFORMANCE STATS
+         ========================================================================== -->
+    <section class="trust-section" id="trust" aria-label="Performance Statistics">
+      <div class="container">
+        <div class="stats-grid">
+          
+          <div class="stat-item reveal-on-scroll">
+            <div class="stat-number mono-num" data-target="10" data-suffix="K+">0</div>
+            <div class="stat-label">ACTIVE MEMBERS</div>
+          </div>
+
+          <div class="stat-item reveal-on-scroll">
+            <div class="stat-number mono-num" data-target="150" data-suffix="+">0</div>
+            <div class="stat-label">EXPERT COACHES</div>
+          </div>
+
+          <div class="stat-item reveal-on-scroll">
+            <div class="stat-number mono-num" data-target="94" data-suffix="%">0</div>
+            <div class="stat-label">GOAL ACHIEVEMENT</div>
+          </div>
+
+          <div class="stat-item reveal-on-scroll">
+            <div class="stat-number mono-num" data-target="4.9" data-suffix="/5" data-decimals="1">0.0</div>
+            <div class="stat-label">MEMBER RATING</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. GOAL SELECTION SECTION
+         ========================================================================== -->
+    <section class="section goals-section" id="goals">
+      <div class="container">
+        
+        <div class="section-header reveal-on-scroll">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            INTENTIONAL PATHWAY
+          </div>
+          <h2 class="section-title">
+            WHAT ARE YOU<br>TRAINING FOR?
+          </h2>
+          <p class="section-subtitle">
+            Every body is distinct. Choose your primary physiological objective to unlock an engineered training track.
+          </p>
+        </div>
+
+        <div class="goals-grid">
+
+          <!-- Goal 1 -->
+          <div class="goal-panel reveal-on-scroll" data-goal="BUILD MUSCLE">
+            <span class="goal-index">01</span>
+            <div class="goal-name">BUILD MUSCLE</div>
+            <p class="goal-desc">Targeted hypertrophy, mechanical tension, and periodized progressive overload protocols.</p>
+            <div class="goal-arrow-wrap" aria-label="Select Build Muscle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Goal 2 -->
+          <div class="goal-panel reveal-on-scroll" data-goal="LOSE WEIGHT">
+            <span class="goal-index">02</span>
+            <div class="goal-name">LOSE WEIGHT</div>
+            <p class="goal-desc">High metabolic flux, lean tissue preservation, and sustainable physiological deficit cycles.</p>
+            <div class="goal-arrow-wrap" aria-label="Select Lose Weight">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Goal 3 -->
+          <div class="goal-panel reveal-on-scroll" data-goal="RUN FASTER">
+            <span class="goal-index">03</span>
+            <div class="goal-name">RUN FASTER</div>
+            <p class="goal-desc">Lactate threshold conditioning, sprint biomechanics, and aerobic cadence efficiency.</p>
+            <div class="goal-arrow-wrap" aria-label="Select Run Faster">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Goal 4 -->
+          <div class="goal-panel reveal-on-scroll" data-goal="GET STRONGER">
+            <span class="goal-index">04</span>
+            <div class="goal-name">GET STRONGER</div>
+            <p class="goal-desc">Maximal force production, central nervous system adaptation, and structural absolute power.</p>
+            <div class="goal-arrow-wrap" aria-label="Select Get Stronger">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Goal 5 -->
+          <div class="goal-panel reveal-on-scroll" data-goal="MOVE BETTER">
+            <span class="goal-index">05</span>
+            <div class="goal-name">MOVE BETTER</div>
+            <p class="goal-desc">Kinetic joint articulation, thoracic mobility, spinal decompression, and lifetime movement health.</p>
+            <div class="goal-arrow-wrap" aria-label="Select Move Better">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. TRAINING PROGRAMS
+         ========================================================================== -->
+    <section class="section" id="programs">
+      <div class="container">
+        
+        <div class="section-header reveal-on-scroll">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            STRUCTURED DISCIPLINES
+          </div>
+          <h2 class="section-title">
+            TRAIN WITH PURPOSE.
+          </h2>
+          <p class="section-subtitle">
+            Four specialized tracks built by world-class coaches and sports physiologists. Tested at the highest levels of human output.
+          </p>
+        </div>
+
+        <div class="programs-grid">
+
+          <!-- Program 1: Strength -->
+          <article class="program-card reveal-on-scroll">
+            <div class="program-img-wrap">
+              <img src="photo/program_strength.jpg" alt="Athlete executing power lift in concrete gym" class="program-img" loading="lazy">
+              <span class="program-badge">TRACK 01 // POWER</span>
+            </div>
+            <div class="program-content">
+              <div class="program-header">
+                <h3 class="program-title">STRENGTH</h3>
+                <span class="program-tagline">BUILD POWER. BUILD MUSCLE.</span>
+              </div>
+              <p class="program-summary">
+                A biomechanically sound system emphasizing compound barbell lifts, progressive mechanical tension, and explosive rate of force development.
+              </p>
+              <div class="program-meta-list">
+                <div class="program-meta-item">
+                  <span class="meta-label">FREQUENCY</span>
+                  <span class="meta-value">4 SESSIONS / WK</span>
+                </div>
+                <div class="program-meta-item">
+                  <span class="meta-label">INTENSITY</span>
+                  <span class="meta-value">RPE 8.0 — 9.5</span>
+                </div>
+                <div class="program-meta-item">
+                  <span class="meta-label">DURATION</span>
+                  <span class="meta-value">12-WEEK CYCLE</span>
+                </div>
+              </div>
+              <a href="#pricing" class="link-cta">
+                VIEW CURRICULUM
+                <span class="link-arrow">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Program 2: Running -->
+          <article class="program-card reveal-on-scroll">
+            <div class="program-img-wrap">
+              <img src="photo/program_running.jpg" alt="Endurance runner on outdoor track at sunrise" class="program-img" loading="lazy">
+              <span class="program-badge">TRACK 02 // ENDURANCE</span>
+            </div>
+            <div class="program-content">
+              <div class="program-header">
+                <h3 class="program-title">RUNNING</h3>
+                <span class="program-tagline">GO FURTHER. MOVE FASTER.</span>
+              </div>
+              <p class="program-summary">
+                Targeted lactate threshold intervals, aerobic base building, and cadence mechanics to shave minutes off 5K, 10K, and marathon personal bests.
+              </p>
+              <div class="program-meta-list">
+                <div class="program-meta-item">
+                  <span class="meta-label">FREQUENCY</span>
+                  <span class="meta-value">3 - 5 RUNS / WK</span>
+                </div>
+                <div class="program-meta-item">
+                  <span class="meta-label">INTENSITY</span>
+                  <span class="meta-value">ZONES 2 THROUGH 5</span>
+                </div>
+                <div class="program-meta-item">
+                  <span class="meta-label">DURATION</span>
+                  <span class="meta-value">16-WEEK CYCLE</span>
+                </div>
+              </div>
+              <a href="#pricing" class="link-cta">
+                VIEW CURRICULUM
+                <span class="link-arrow">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Program 3: Performance -->
+          <article class="program-card reveal-on-scroll">
+            <div class="program-img-wrap">
+              <img src="photo/program_performance.jpg" alt="Conditioning athlete jumping with battle ropes" class="program-img" loading="lazy">
+              <span class="program-badge">TRACK 03 // HYBRID</span>
+            </div>
+            <div class="program-content">
+              <div class="program-header">
+                <h3 class="program-title">PERFORMANCE</h3>
+                <span class="program-tagline">TRAIN BEYOND YOUR LIMITS.</span>
+              </div>
+              <p class="program-summary">
+                The pinnacle of athletic conditioning. Blending high-density glycolytic work, plyometric power, and functional stamina for elite competitors.
+              </p>
+              <div class="program-meta-list">
+                <div class="program-meta-item">
+                  <span class="meta-label">FREQUENCY</span>
+                  <span class="meta-value">5 SESSIONS / WK</span>
+                </div>
+                <div class="program-meta-item">
+                  <span class="meta-label">INTENSITY</span>
+                  <span class="meta-value">MAX AEROBIC SPEED</span>
+                </div>
+                <div class="program-meta-item">
+                  <span class="meta-label">DURATION</span>
+                  <span class="meta-value">8-WEEK CYCLE</span>
+                </div>
+              </div>
+              <a href="#pricing" class="link-cta">
+                VIEW CURRICULUM
+                <span class="link-arrow">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Program 4: Mobility -->
+          <article class="program-card reveal-on-scroll">
+            <div class="program-img-wrap">
+              <img src="photo/program_mobility.jpg" alt="Athlete in deep kinetic stretch in modern architectural studio" class="program-img" loading="lazy">
+              <span class="program-badge">TRACK 04 // LONGEVITY</span>
+            </div>
+            <div class="program-content">
+              <div class="program-header">
+                <h3 class="program-title">MOBILITY</h3>
+                <span class="program-tagline">MOVE BETTER. FEEL BETTER.</span>
+              </div>
+              <p class="program-summary">
+                Restores full articular joint range, decompresses spinal load, enhances tissue elasticity, and accelerates parasympathetic nervous system recovery.
+              </p>
+              <div class="program-meta-list">
+                <div class="program-meta-item">
+                  <span class="meta-label">FREQUENCY</span>
+                  <span class="meta-value">DAILY 20-MIN</span>
+                </div>
+                <div class="program-meta-item">
+                  <span class="meta-label">INTENSITY</span>
+                  <span class="meta-value">RESTORATIVE / ACTIVE</span>
+                </div>
+                <div class="program-meta-item">
+                  <span class="meta-label">DURATION</span>
+                  <span class="meta-value">CONTINUOUS</span>
+                </div>
+              </div>
+              <a href="#pricing" class="link-cta">
+                VIEW CURRICULUM
+                <span class="link-arrow">→</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. TRAINING SYSTEM (METHODOLOGY)
+         ========================================================================== -->
+    <section class="section section-secondary" id="system">
+      <div class="container">
+        
+        <div class="system-layout">
+          
+          <!-- Sticky Left Anchor -->
+          <div class="system-sticky-col reveal-on-scroll">
+            <div class="eyebrow">
+              <span class="dot"></span>
+              FOUR-PHASE CYCLE
+            </div>
+            <h2 class="section-title">
+              A SYSTEM BUILT<br>AROUND YOU.
+            </h2>
+            <p class="section-subtitle">
+              We eliminate guesswork with a four-pillar physiological framework that constantly adapts to your output and biometric markers.
+            </p>
+            <div style="margin-top: 2.5rem;">
+              <button class="btn btn-primary" data-trigger-assessment>
+                START SYSTEM EVALUATION
+                <span class="btn-arrow">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step Progression List -->
+          <div class="system-steps-list">
+
+            <!-- Step 1 -->
+            <div class="system-step-item active" data-step="1">
+              <span class="step-num-node"></span>
+              <div class="step-num-tag">PHASE 01</div>
+              <h3 class="step-name">ASSESS</h3>
+              <p class="step-desc">
+                Understand where you are. We measure your baseline VO2 peak, lactate clearance threshold, joint mobility constraints, and movement asymmetries before prescribing a single set.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="system-step-item" data-step="2">
+              <span class="step-num-node"></span>
+              <div class="step-num-tag">PHASE 02</div>
+              <h3 class="step-name">PLAN</h3>
+              <p class="step-desc">
+                Build your training path. Periodized weekly programming tailored specifically to your autonomic recovery capacity, available schedule, and athletic milestone targets.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="system-step-item" data-step="3">
+              <span class="step-num-node"></span>
+              <div class="step-num-tag">PHASE 03</div>
+              <h3 class="step-name">TRAIN</h3>
+              <p class="step-desc">
+                Follow structured workouts. Guided execution with exact target heart rate zones, tempo cadences, and load percentages. Real coaching cues for every movement.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="system-step-item" data-step="4">
+              <span class="step-num-node"></span>
+              <div class="step-num-tag">PHASE 04</div>
+              <h3 class="step-name">PROGRESS</h3>
+              <p class="step-desc">
+                Track your improvement. Ongoing biometric feedback dynamically fine-tunes future training cycles based on HRV, sleep metrics, and cumulative weekly workload.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. COACHES ROSTER SECTION
+         ========================================================================== -->
+    <section class="section" id="coaches">
+      <div class="container">
+        
+        <div class="section-header reveal-on-scroll">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            WORLD-CLASS FACULTY
+          </div>
+          <h2 class="section-title">
+            TRAIN WITH PEOPLE<br>WHO KNOW THE WAY.
+          </h2>
+          <p class="section-subtitle">
+            Former Olympic athletes, Doctor of Physical Therapy specialists, and Master of Science biomechanists dedicated to your progression.
+          </p>
+        </div>
+
+        <div class="coaches-grid">
+
+          <!-- Coach 1 -->
+          <div class="coach-card reveal-on-scroll" data-trigger-assessment>
+            <div class="coach-img-box">
+              <img src="photo/coach_marcus.jpg" alt="Coach Marcus Vance" class="coach-img" loading="lazy">
+              <div class="coach-hover-pill">
+                <span class="lime-dot"></span>
+                <span>VIEW PROFILE →</span>
+              </div>
+            </div>
+            <div class="coach-info">
+              <h3 class="coach-name">MARCUS VANCE</h3>
+              <div class="coach-specialty">HEAD OF HUMAN PERFORMANCE</div>
+              <div class="coach-experience">14+ Years / Former Decathlon Finalist</div>
+              <span class="link-cta">
+                EXPLORE METHODOLOGY
+                <span class="link-arrow">→</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Coach 2 -->
+          <div class="coach-card reveal-on-scroll" data-trigger-assessment>
+            <div class="coach-img-box">
+              <img src="photo/coach_elena.jpg" alt="Coach Elena Rostova" class="coach-img" loading="lazy">
+              <div class="coach-hover-pill">
+                <span class="lime-dot"></span>
+                <span>VIEW PROFILE →</span>
+              </div>
+            </div>
+            <div class="coach-info">
+              <h3 class="coach-name">ELENA ROSTOVA</h3>
+              <div class="coach-specialty">ENDURANCE & AEROBIC CAPACITY</div>
+              <div class="coach-experience">11+ Years / 2x National 10K Champion</div>
+              <span class="link-cta">
+                EXPLORE METHODOLOGY
+                <span class="link-arrow">→</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Coach 3 -->
+          <div class="coach-card reveal-on-scroll" data-trigger-assessment>
+            <div class="coach-img-box">
+              <img src="photo/coach_soren.jpg" alt="Coach Soren Knudsen" class="coach-img" loading="lazy">
+              <div class="coach-hover-pill">
+                <span class="lime-dot"></span>
+                <span>VIEW PROFILE →</span>
+              </div>
+            </div>
+            <div class="coach-info">
+              <h3 class="coach-name">SOREN KNUDSEN</h3>
+              <div class="coach-specialty">BIOMECHANICS & STRENGTH</div>
+              <div class="coach-experience">12+ Years / M.Sc. Applied Kinesiology</div>
+              <span class="link-cta">
+                EXPLORE METHODOLOGY
+                <span class="link-arrow">→</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Coach 4 -->
+          <div class="coach-card reveal-on-scroll" data-trigger-assessment>
+            <div class="coach-img-box">
+              <img src="photo/coach_maya.jpg" alt="Coach Maya Lin" class="coach-img" loading="lazy">
+              <div class="coach-hover-pill">
+                <span class="lime-dot"></span>
+                <span>VIEW PROFILE →</span>
+              </div>
+            </div>
+            <div class="coach-info">
+              <h3 class="coach-name">MAYA LIN</h3>
+              <div class="coach-specialty">MOBILITY & TISSUE RECOVERY</div>
+              <div class="coach-experience">9+ Years / DPT Sports Physical Therapy</div>
+              <span class="link-cta">
+                EXPLORE METHODOLOGY
+                <span class="link-arrow">→</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         8. RESULTS & TRANSFORMATION SECTION
+         ========================================================================== -->
+    <section class="section results-section" id="results">
+      <div class="container">
+        
+        <div class="section-header reveal-on-scroll">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            DOCUMENTED PERFORMANCE
+          </div>
+          <h2 class="section-title">
+            PROGRESS YOU<br>CAN SEE.
+          </h2>
+          <p class="section-subtitle">
+            Measurable, indisputable biological adaptation. Drag the interactive split line to inspect baseline testing vs peak competitive output.
+          </p>
+        </div>
+
+        <div class="results-grid">
+
+          <!-- Interactive Split Slider -->
+          <div class="compare-container reveal-on-scroll" id="compareSliderWrap">
+            <!-- Background Image: After (Peak Output) -->
+            <img src="photo/result_after.jpg" alt="Peak athletic performance crossing finish line" class="compare-img">
+            <span class="compare-badge after">PEAK STATE (WEEK 16)</span>
+
+            <!-- Clipped Overlay: Before (Baseline Lab Testing) -->
+            <div class="compare-overlay" id="compareOverlay">
+              <img src="photo/result_before.jpg" alt="Baseline VO2 max testing in laboratory" class="compare-img">
+              <span class="compare-badge before">BASELINE (WEEK 01)</span>
+            </div>
+
+            <!-- Drag Handle Icon -->
+            <div class="compare-slider-handle" id="compareHandle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+
+            <!-- Accessible Range Input Range -->
+            <input 
+              type="range" 
+              min="0" 
+              max="100" 
+              value="50" 
+              class="compare-input-range" 
+              id="compareRange"
+              aria-label="Drag before and after transformation slider"
+            >
+          </div>
+
+          <!-- Real Metric Data Column -->
+          <div class="results-data-col">
+            
+            <div class="results-metric-card reveal-on-scroll">
+              <div>
+                <div class="metric-subject">VO2 MAX CAPACITY</div>
+                <div class="metric-context">Aerobic ceiling & metabolic efficiency</div>
+              </div>
+              <div class="metric-shift">
+                <div class="metric-delta">
+                  58.4 <span class="delta-tag">+38.7%</span>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">From 42.1 mL/kg/min</div>
+              </div>
+            </div>
+
+            <div class="results-metric-card reveal-on-scroll">
+              <div>
+                <div class="metric-subject">RESTING HEART RATE</div>
+                <div class="metric-context">Parasympathetic cardiac adaptation</div>
+              </div>
+              <div class="metric-shift">
+                <div class="metric-delta">
+                  46 <span class="delta-tag" style="background-color: var(--accent-lime-soft);">-18 BPM</span>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">From 64 BPM baseline</div>
+              </div>
+            </div>
+
+            <div class="results-metric-card reveal-on-scroll">
+              <div>
+                <div class="metric-subject">HALF MARATHON PR</div>
+                <div class="metric-context">Pacing efficiency & cadence threshold</div>
+              </div>
+              <div class="metric-shift">
+                <div class="metric-delta">
+                  1:28:14 <span class="delta-tag">-26 MINS</span>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">From 1:54:30 baseline</div>
+              </div>
+            </div>
+
+            <div class="results-metric-card reveal-on-scroll">
+              <div>
+                <div class="metric-subject">DEADLIFT 1-REP MAX</div>
+                <div class="metric-context">Absolute posterior chain force production</div>
+              </div>
+              <div class="metric-shift">
+                <div class="metric-delta">
+                  185 <span class="delta-tag">+45 KG</span>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">From 140 KG baseline</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         9. TECHNOLOGY & TELEMETRY SECTION
+         ========================================================================== -->
+    <section class="section" id="technology">
+      <div class="container">
+        
+        <div class="tech-container reveal-on-scroll">
+          
+          <div class="tech-header-grid">
+            <div>
+              <div class="eyebrow eyebrow-dark">
+                <span class="dot"></span>
+                CONNECTED TELEMETRY
+              </div>
+              <h2 class="section-title" style="color: #FFFFFF;">
+                YOUR PROGRESS.<br>ONE PLACE.
+              </h2>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="tech-tabs" role="tablist">
+              <button class="tech-tab-btn active" data-tech="strain" role="tab">DAY STRAIN</button>
+              <button class="tech-tab-btn" data-tech="recovery" role="tab">RECOVERY</button>
+              <button class="tech-tab-btn" data-tech="zones" role="tab">HR ZONES</button>
+              <button class="tech-tab-btn" data-tech="biomechanics" role="tab">BIOMECHANICS</button>
+            </div>
+          </div>
+
+          <!-- Athletic Telemetry HUD -->
+          <div class="tech-dashboard-grid">
+            
+            <!-- Left Chart Box -->
+            <div class="telemetry-card">
+              <div class="telemetry-header">
+                <span class="telemetry-title" id="telemetryTitle">DAY STRAIN ACCUMULATION</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-lime);">• LIVE SYNC</span>
+              </div>
+              <div class="telemetry-val-large" id="telemetryVal">
+                16.8 <span class="val-unit">/ 21</span>
+              </div>
+
+              <!-- Animated Chart -->
+              <div class="chart-container">
+                <svg class="chart-svg" viewBox="0 0 500 130" preserveAspectRatio="none">
+                  <!-- Grid hairlines -->
+                  <line x1="0" y1="30" x2="500" y2="30" class="chart-grid-line"></line>
+                  <line x1="0" y1="70" x2="500" y2="70" class="chart-grid-line"></line>
+                  <line x1="0" y1="110" x2="500" y2="110" class="chart-grid-line"></line>
+                  
+                  <!-- Dynamic Line -->
+                  <path id="telemetryChartLine" class="chart-line" d="M0,110 C50,105 90,85 140,75 C190,65 240,80 300,50 C360,20 420,35 480,15 L500,10"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Right Mini Metrics Grid -->
+            <div class="telemetry-mini-grid">
+              
+              <div class="telemetry-mini-card">
+                <div class="mini-card-label" id="techMini1Label">PEAK METABOLIC RATE</div>
+                <div class="mini-card-val" id="techMini1Val">782 CAL</div>
+                <div class="mini-card-badge" id="techMini1Badge">ZONE 4 DOMINANT</div>
+              </div>
+
+              <div class="telemetry-mini-card">
+                <div class="mini-card-label" id="techMini2Label">RECOVERY DEMAND</div>
+                <div class="mini-card-val" id="techMini2Val">HIGH</div>
+                <div class="mini-card-badge" id="techMini2Badge">8.4 HRS SLEEP ADVICE</div>
+              </div>
+
+              <div class="telemetry-mini-card">
+                <div class="mini-card-label">SLEEP ARCHITECTURE</div>
+                <div class="mini-card-val">2H 14M</div>
+                <div class="mini-card-badge">DEEP + REM PHASES</div>
+              </div>
+
+              <div class="telemetry-mini-card">
+                <div class="mini-card-label">WORKLOAD RATIO</div>
+                <div class="mini-card-val">1.18</div>
+                <div class="mini-card-badge">OPTIMAL PROGRESSION</div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         10. TESTIMONIALS SECTION
+         ========================================================================== -->
+    <section class="section testimonials-section" id="testimonials">
+      <div class="container">
+        
+        <div class="testimonial-container reveal-on-scroll">
+          <div class="quote-mark">“</div>
+          <blockquote class="testimonial-quote" id="testQuote">
+            “I DIDN'T JUST GET STRONGER. I BECAME MORE DISCIPLINED.”
+          </blockquote>
+          <div class="testimonial-author" id="testAuthor">MARCUS VANCE</div>
+          <div class="testimonial-role" id="testRole">HYBRID PERFORMANCE MEMBER // 18 MONTHS</div>
+
+          <div class="testimonial-nav">
+            <button class="quote-nav-btn" id="prevTestimonial" aria-label="Previous testimonial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button class="quote-nav-btn" id="nextTestimonial" aria-label="Next testimonial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         11. PRICING / MEMBERSHIP SECTION
+         ========================================================================== -->
+    <section class="section pricing-section" id="pricing">
+      <div class="container">
+        
+        <div class="section-header reveal-on-scroll" style="text-align: center; max-width: 680px; margin-left: auto; margin-right: auto;">
+          <div class="eyebrow" style="justify-content: center;">
+            <span class="dot"></span>
+            MEMBERSHIP TIERS
+          </div>
+          <h2 class="section-title">
+            CHOOSE HOW<br>YOU TRAIN.
+          </h2>
+          <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+            Transparent pricing built for athletes who respect commitment. No hidden fees. Cancel anytime.
+          </p>
+        </div>
+
+        <!-- Billing Switch -->
+        <div class="billing-switch-wrap reveal-on-scroll" id="billingToggle">
+          <div class="billing-toggle-btn">
+            <button class="toggle-opt active" data-cycle="monthly">MONTHLY</button>
+            <button class="toggle-opt" data-cycle="annual">ANNUAL</button>
+          </div>
+          <span class="save-badge">SAVE 20%</span>
+        </div>
+
+        <div class="pricing-grid">
+
+          <!-- Plan 1: Starter -->
+          <div class="pricing-card reveal-on-scroll">
+            <h3 class="plan-name">STARTER</h3>
+            <p class="plan-desc">Essential periodized programming for solo athletes building consistency.</p>
+            <div class="plan-price-wrap">
+              <span class="plan-currency">$</span>
+              <span class="plan-amount" id="priceStarter">79</span>
+              <span class="plan-interval">/ month</span>
+            </div>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Full access to 1 training track</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Weekly workout progression updates</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Active Soul Telemetry App access</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Community leaderboard access</span>
+              </li>
+            </ul>
+            <button class="btn btn-secondary" data-trigger-assessment>GET STARTED →</button>
+          </div>
+
+          <!-- Plan 2: Performance (Featured) -->
+          <div class="pricing-card featured reveal-on-scroll">
+            <span class="plan-badge">RECOMMENDED</span>
+            <h3 class="plan-name">PERFORMANCE</h3>
+            <p class="plan-desc">Our primary system. Full telemetry integration, coach review, and multi-track mobility.</p>
+            <div class="plan-price-wrap">
+              <span class="plan-currency">$</span>
+              <span class="plan-amount" id="pricePerformance">149</span>
+              <span class="plan-interval">/ month</span>
+            </div>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>All 4 training tracks (Strength, Run, Hybrid, Mobility)</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Monthly video biomechanics coach check-in</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Live autonomic HRV & sleep recovery sync</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Custom nutrition & macronutrient targets</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Priority 1-on-1 coach support</span>
+              </li>
+            </ul>
+            <button class="btn btn-primary" data-trigger-assessment>GET STARTED →</button>
+          </div>
+
+          <!-- Plan 3: Elite -->
+          <div class="pricing-card reveal-on-scroll">
+            <h3 class="plan-name">ELITE</h3>
+            <p class="plan-desc">Dedicated head coach assignment, weekly live video analysis, and competition peaking.</p>
+            <div class="plan-price-wrap">
+              <span class="plan-currency">$</span>
+              <span class="plan-amount" id="priceElite">289</span>
+              <span class="plan-interval">/ month</span>
+            </div>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dedicated Olympic/Physiologist coach</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Weekly 1-on-1 video strategy & form critique</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Custom race/meet tapering protocols</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>VIP concierge support 7 days a week</span>
+              </li>
+            </ul>
+            <button class="btn btn-secondary" data-trigger-assessment>GET STARTED →</button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         12. FINAL CINEMATIC CTA SECTION
+         ========================================================================== -->
+    <section class="final-cta-section" id="final-cta">
+      <!-- High-Resolution Sprinter Background -->
+      <img src="photo/cta_sprinter.png" alt="Sprinter exploding from starting blocks on track into golden sunrise" class="final-cta-bg">
+      <div class="final-cta-overlay"></div>
+
+      <div class="container">
+        <div class="final-cta-content reveal-on-scroll">
+          <div class="eyebrow eyebrow-dark">
+            <span class="dot"></span>
+            TAKE YOUR MARK
+          </div>
+          <h2 class="final-cta-headline">
+            YOUR STRONGEST VERSION<br>STARTS HERE.
+          </h2>
+          <p class="final-cta-copy">
+            Build the strength.<br>
+            Build the discipline.<br>
+            Build the version of you that lasts.
+          </p>
+          <div class="final-cta-actions">
+            <button class="btn btn-primary" data-trigger-assessment id="finalCtaBtn">
+              START TRAINING
+              <span class="btn-arrow">→</span>
+            </button>
+            <a href="#programs" class="btn btn-on-dark">
+              EXPLORE PROGRAMS
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       13. EDITORIAL FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <div class="footer-brand-info">
+          <a href="#" class="brand-logo">
+            <span class="brand-mark">
+              <span class="brand-mark-inner"></span>
+            </span>
+            ACTIVE SOUL
+          </a>
+          <p class="footer-brand-tagline">
+            Precision-engineered human performance system. Designed for discipline, longevity, and athletic excellence.
+          </p>
+          <div class="footer-status-tag">
+            <span class="dot" style="width: 7px; height: 7px; background: var(--accent-lime); border-radius: 50%; display: inline-block;"></span>
+            <span>SYSTEM STATUS: NORMAL // 2026 EDITION</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#goals" class="footer-nav-link">Training</a></li>
+            <li><a href="#programs" class="footer-nav-link">Programs</a></li>
+            <li><a href="#system" class="footer-nav-link">Methodology</a></li>
+            <li><a href="#coaches" class="footer-nav-link">Coaches</a></li>
+            <li><a href="#results" class="footer-nav-link">Results</a></li>
+            <li><a href="#technology" class="footer-nav-link">Technology</a></li>
+            <li><a href="#pricing" class="footer-nav-link">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">PROGRAMS</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#programs" class="footer-nav-link">Strength & Power</a></li>
+            <li><a href="#programs" class="footer-nav-link">Running & Threshold</a></li>
+            <li><a href="#programs" class="footer-nav-link">Hybrid Performance</a></li>
+            <li><a href="#programs" class="footer-nav-link">Kinetic Mobility</a></li>
+            <li><a href="#programs" class="footer-nav-link">Metabolic Peaking</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">CONNECT</h4>
+          <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            Follow our athletes and lab research across global performance channels.
+          </p>
+          <div class="footer-social-links">
+            <!-- Instagram -->
+            <a href="#" class="social-icon-btn" aria-label="Active Soul on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="#" class="social-icon-btn" aria-label="Active Soul on YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="#" class="social-icon-btn" aria-label="Active Soul on Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 ACTIVE SOUL INC. ALL RIGHTS RESERVED.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#" class="footer-nav-link">Privacy Policy</a>
+          <a href="#" class="footer-nav-link">Terms of Service</a>
+          <a href="#" class="footer-nav-link">Biometric Data Security</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       14. INTERACTIVE ONBOARDING ASSESSMENT MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="assessmentModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-step-indicator">
+        <div class="step-pill active"></div>
+        <div class="step-pill"></div>
+        <div class="step-pill"></div>
+      </div>
+
+      <!-- Step 1: Goal -->
+      <div id="modalStep1">
+        <h3 class="modal-title" id="modalTitle">WHAT IS YOUR PRIMARY GOAL?</h3>
+        <p class="modal-subtitle">Select the primary outcome you want your program to prioritize.</p>
+        <div class="modal-options-list">
+          <button class="modal-option-btn selected" data-val="BUILD MUSCLE">
+            <span>01 // BUILD MUSCLE & POWER</span>
+            <span class="opt-check">✓</span>
+          </button>
+          <button class="modal-option-btn" data-val="RUN FASTER">
+            <span>02 // RUN FASTER & ENDURANCE</span>
+            <span class="opt-check">✓</span>
+          </button>
+          <button class="modal-option-btn" data-val="HYBRID PERFORMANCE">
+            <span>03 // HYBRID ATHLETIC PERFORMANCE</span>
+            <span class="opt-check">✓</span>
+          </button>
+          <button class="modal-option-btn" data-val="MOVE BETTER">
+            <span>04 // MOBILITY & KINETIC LONGEVITY</span>
+            <span class="opt-check">✓</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Commitment -->
+      <div id="modalStep2" style="display: none;">
+        <h3 class="modal-title">WEEKLY COMMITMENT</h3>
+        <p class="modal-subtitle">How many days per week are you dedicated to training?</p>
+        <div class="modal-options-list">
+          <button class="modal-option-btn" data-val="2 - 3 DAYS / WEEK">
+            <span>3 SESSIONS / WEEK (FOUNDATIONAL)</span>
+            <span class="opt-check">✓</span>
+          </button>
+          <button class="modal-option-btn selected" data-val="4 - 5 DAYS / WEEK">
+            <span>4 TO 5 SESSIONS / WEEK (RECOMMENDED)</span>
+            <span class="opt-check">✓</span>
+          </button>
+          <button class="modal-option-btn" data-val="6+ DAYS / WEEK">
+            <span>6 SESSIONS / WEEK (ELITE ATHLETE)</span>
+            <span class="opt-check">✓</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Recommendation -->
+      <div id="modalStep3" style="display: none;">
+        <div class="eyebrow">
+          <span class="dot"></span>
+          RECOMMENDED PROGRAM MATCH
+        </div>
+        <h3 class="modal-title" id="recProgram">HYBRID PERFORMANCE TRACK</h3>
+        <p class="modal-subtitle" id="recDesc">
+          Programmed for 4-5 days per week combining progressive strength, aerobic threshold, and recovery telemetry.
+        </p>
+        <div style="background-color: var(--bg-secondary); border-radius: 8px; padding: 1.25rem; margin-bottom: 2rem;">
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.25rem;">TARGET FOCUS</div>
+          <div style="font-weight: 700; color: var(--text-primary);" id="recGoal">BUILD MUSCLE</div>
+        </div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="#pricing" class="btn btn-primary" style="flex: 1;" onclick="closeModal()">
+            JOIN PROGRAM NOW →
+          </a>
+          <button class="btn btn-secondary" id="modalRestartBtn">
+            RESET
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/app.js"></script>
+</body>
+</html>
