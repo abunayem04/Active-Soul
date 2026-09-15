@@ -572,13 +572,13 @@ ul, ol {
 
 /* --- 6. HERO SECTION (COLOSSAL RUNNER FOCAL POINT) --- */
 .hero-section {
-  padding-top: clamp(1.25rem, 2.5vh, 2.5rem);
-  padding-bottom: clamp(1rem, 2vh, 2rem);
+  padding-top: 0.5rem;
+  padding-bottom: 0;
   position: relative;
   overflow: hidden;
   background-color: var(--bg-main);
-  min-height: calc(100vh - 110px);
-  min-height: calc(100dvh - 110px);
+  min-height: calc(100vh - 90px);
+  min-height: calc(100dvh - 90px);
   display: flex;
   align-items: center;
 }
@@ -586,22 +586,24 @@ ul, ol {
 .hero-container-custom {
   max-width: 1620px;
   width: 100%;
-  padding-left: clamp(1.5rem, 5vw, 4.5rem);
-  padding-right: clamp(1rem, 3vw, 2.5rem);
+  padding-left: clamp(1.5rem, 4vw, 4rem);
+  padding-right: clamp(1rem, 2.5vw, 2rem);
+  position: relative;
+  z-index: 2;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(400px, 1fr) minmax(480px, 1.25fr);
+  grid-template-columns: minmax(440px, 1fr) minmax(520px, 1.25fr);
   align-items: center;
-  gap: clamp(1.5rem, 3vw, 3rem);
+  gap: clamp(1.25rem, 2.5vw, 2.75rem);
   position: relative;
   z-index: 2;
   width: 100%;
 }
 
 .hero-content {
-  max-width: 560px;
+  max-width: 600px;
   position: relative;
   z-index: 3;
 }
@@ -614,9 +616,9 @@ ul, ol {
 }
 
 .hero-headline {
-  font-size: clamp(3rem, 5.2vw, 5.5rem);
-  line-height: 0.9;
-  margin-bottom: clamp(0.75rem, 1.5vh, 1.25rem);
+  font-size: clamp(3.8rem, 6.2vw, 6.6rem);
+  line-height: 0.88;
+  margin-bottom: clamp(0.85rem, 1.6vh, 1.35rem);
   color: var(--text-primary);
   overflow: hidden;
   letter-spacing: -0.01em;
@@ -647,12 +649,12 @@ ul, ol {
 }
 
 .hero-copy {
-  font-size: clamp(0.875rem, 1vw, 1.05rem);
+  font-size: clamp(0.95rem, 1.1vw, 1.125rem);
   font-weight: 400;
   color: var(--text-secondary);
   line-height: 1.6;
-  max-width: 480px;
-  margin-bottom: clamp(1rem, 2vh, 1.75rem);
+  max-width: 500px;
+  margin-bottom: clamp(1.15rem, 2.2vh, 1.85rem);
   opacity: 0;
   transform: translateY(20px);
   animation: heroFadeUp 0.8s var(--ease-cinematic) 0.8s forwards;
@@ -662,7 +664,7 @@ ul, ol {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
   margin-bottom: 0;
   opacity: 0;
   transform: translateY(20px);
@@ -714,29 +716,31 @@ ul, ol {
   align-items: flex-end;
   height: 100%;
   min-height: 0;
+  align-self: stretch;
 }
 
 .hero-runner-wrapper {
   position: relative;
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   opacity: 0;
   transform: translateX(40px) scale(0.97);
   animation: heroRunnerEnter 1.2s var(--ease-cinematic) 0.3s forwards;
-  margin-bottom: 0;
+  margin-bottom: -5px;
 }
 
 .hero-runner-img {
   width: auto;
   max-width: 100%;
-  height: clamp(380px, 68vh, 680px);
-  max-height: calc(100vh - 140px);
-  max-height: calc(100dvh - 140px);
+  height: clamp(500px, 80vh, 840px);
+  max-height: calc(100vh - 95px);
+  max-height: calc(100dvh - 95px);
   object-fit: contain;
   object-position: bottom right;
-  filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.12));
+  filter: drop-shadow(0 25px 55px rgba(0, 0, 0, 0.13));
   user-select: none;
   pointer-events: none;
 }
@@ -744,13 +748,13 @@ ul, ol {
 /* Hero Background Watermark Typography (Spanning Behind Athlete in Lower Half) */
 .hero-bg-watermark {
   position: absolute;
-  bottom: 0;
-  left: 26%;
+  bottom: -2%;
+  left: 22%;
   font-family: var(--font-display);
-  font-size: clamp(6.5rem, 15vw, 17rem);
+  font-size: clamp(8.5rem, 18vw, 21rem);
   line-height: 0.8;
   letter-spacing: -0.01em;
-  color: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.055);
   user-select: none;
   pointer-events: none;
   z-index: 1;
