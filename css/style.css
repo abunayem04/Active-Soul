@@ -506,16 +506,16 @@ ul, ol {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(380px, 0.85fr) minmax(640px, 1.45fr);
+  grid-template-columns: minmax(440px, 1fr) minmax(560px, 1.25fr);
   align-items: center;
-  gap: clamp(1rem, 3vw, 2.5rem);
+  gap: clamp(1.5rem, 3vw, 3rem);
   position: relative;
   z-index: 2;
   width: 100%;
 }
 
 .hero-content {
-  max-width: 520px;
+  max-width: 580px;
   position: relative;
   z-index: 3;
 }
@@ -527,12 +527,13 @@ ul, ol {
 }
 
 .hero-headline {
-  font-size: clamp(2.85rem, 5.2vw, 5.4rem);
-  line-height: 0.94;
-  margin-bottom: 1.25rem;
+  font-size: clamp(3.8rem, 6.6vw, 7.2rem);
+  line-height: 0.88;
+  margin-bottom: 1.5rem;
   color: var(--text-primary);
   overflow: hidden;
   letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 
 .hero-headline-line {
@@ -543,28 +544,31 @@ ul, ol {
 }
 
 .hero-headline-line:nth-child(1) {
-  animation-delay: 0.3s;
+  animation-delay: 0.2s;
 }
 
 .hero-headline-line:nth-child(2) {
-  animation-delay: 0.45s;
+  animation-delay: 0.35s;
 }
 
 .hero-headline-line:nth-child(3) {
-  animation-delay: 0.6s;
+  animation-delay: 0.5s;
+}
+
+.hero-headline-line:nth-child(4) {
+  animation-delay: 0.65s;
 }
 
 .hero-copy {
-  font-size: clamp(1.05rem, 1.25vw, 1.22rem);
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
   font-weight: 400;
   color: var(--text-secondary);
-  line-height: 1.6;
-  max-width: 440px;
+  line-height: 1.65;
+  max-width: 480px;
   margin-bottom: 2.25rem;
-  letter-spacing: -0.01em;
   opacity: 0;
   transform: translateY(20px);
-  animation: heroFadeUp 0.8s var(--ease-cinematic) 0.75s forwards;
+  animation: heroFadeUp 0.8s var(--ease-cinematic) 0.8s forwards;
 }
 
 .hero-actions {
@@ -575,7 +579,7 @@ ul, ol {
   margin-bottom: 2.5rem;
   opacity: 0;
   transform: translateY(20px);
-  animation: heroFadeUp 0.8s var(--ease-cinematic) 0.9s forwards;
+  animation: heroFadeUp 0.8s var(--ease-cinematic) 0.95s forwards;
 }
 
 .hero-status-pill {
@@ -592,7 +596,7 @@ ul, ol {
   border: 1px solid var(--border-light);
   border-radius: var(--radius-badge);
   opacity: 0;
-  animation: heroFadeUp 0.8s var(--ease-cinematic) 1.05s forwards;
+  animation: heroFadeUp 0.8s var(--ease-cinematic) 1.1s forwards;
 }
 
 .hero-status-pill .live-indicator {
@@ -615,14 +619,14 @@ ul, ol {
   animation: pulseGlow 2s infinite;
 }
 
-/* Hero Visual (Colossal Dominant Runner - Dynamic Baseline) */
+/* Hero Visual (Colossal Dominant Runner) */
 .hero-visual-col {
   position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   height: 100%;
-  min-height: clamp(620px, 90vh, 1020px);
+  min-height: clamp(580px, 86vh, 960px);
 }
 
 .hero-runner-wrapper {
@@ -634,14 +638,14 @@ ul, ol {
   opacity: 0;
   transform: translateX(40px) scale(0.97);
   animation: heroRunnerEnter 1.2s var(--ease-cinematic) 0.3s forwards;
-  margin-bottom: -28px;
+  margin-bottom: -15px;
 }
 
 .hero-runner-img {
   width: auto;
   max-width: 100%;
-  height: clamp(730px, 99vh, 1160px);
-  max-height: 102vh;
+  height: clamp(660px, 92vh, 1040px);
+  max-height: 95vh;
   object-fit: contain;
   object-position: bottom right;
   filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.12));
@@ -649,17 +653,16 @@ ul, ol {
   pointer-events: none;
 }
 
-/* Hero Background Watermark Typography (Subtle & Intentionally Layered Behind Athlete) */
+/* Hero Background Watermark Typography (Spanning Behind Athlete in Lower Half) */
 .hero-bg-watermark {
   position: absolute;
-  right: 1vw;
-  top: 52%;
-  transform: translateY(-50%);
+  bottom: -3%;
+  left: 28%;
   font-family: var(--font-display);
-  font-size: clamp(6.5rem, 15.5vw, 17.5rem);
-  line-height: 0.82;
+  font-size: clamp(8.5rem, 18vw, 22rem);
+  line-height: 0.8;
   letter-spacing: -0.01em;
-  color: rgba(0, 0, 0, 0.024);
+  color: rgba(0, 0, 0, 0.03);
   user-select: none;
   pointer-events: none;
   z-index: 1;
