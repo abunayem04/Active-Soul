@@ -100,22 +100,38 @@
   <!-- Mobile Drawer Menu -->
   <div class="drawer-backdrop" id="drawerBackdrop"></div>
   <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
-    <div class="mobile-nav-list">
-      <a href="#programs" class="mobile-nav-link">PROGRAMS</a>
-      <a href="#system" class="mobile-nav-link">METHODOLOGY</a>
-      <a href="#results" class="mobile-nav-link">RESULTS</a>
-      <a href="#events" class="mobile-nav-link">EVENTS</a>
-      <a href="#about" class="mobile-nav-link">ABOUT</a>
-      <a href="#faq" class="mobile-nav-link">FAQ</a>
-      <a href="#contact" class="mobile-nav-link">ENROLL</a>
-    </div>
-    <div class="mobile-drawer-bottom">
-      <button class="btn btn-primary" data-trigger-assessment style="width: 100%;">
-        ENROLL IN BATCH 8 →
+    <div class="mobile-drawer-header">
+      <a href="#" class="drawer-brand" aria-label="Active Soul Home">
+        <img src="photo/logo_vector_black.png" alt="Active Soul Mark" class="drawer-logo-img">
+        <span class="drawer-brand-text">ACTIVE SOUL</span>
+      </a>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close mobile menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
       </button>
-      <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: 1.5rem; text-transform: uppercase;">
-        BANGLADESH'S FIRST ISLAMIC FITNESS PLATFORM
-      </p>
+    </div>
+
+    <div class="mobile-drawer-body">
+      <div class="mobile-nav-list">
+        <a href="#programs" class="mobile-nav-link">PROGRAMS</a>
+        <a href="#system" class="mobile-nav-link">METHODOLOGY</a>
+        <a href="#results" class="mobile-nav-link">RESULTS</a>
+        <a href="#events" class="mobile-nav-link">EVENTS</a>
+        <a href="#about" class="mobile-nav-link">ABOUT</a>
+        <a href="#faq" class="mobile-nav-link">FAQ</a>
+        <a href="#contact" class="mobile-nav-link">ENROLL</a>
+      </div>
+
+      <div class="mobile-drawer-cta">
+        <button class="btn btn-primary" data-trigger-assessment style="width: 100%;">
+          ENROLL IN BATCH 8 →
+        </button>
+        <p class="drawer-tagline">
+          BANGLADESH'S FIRST ISLAMIC FITNESS PLATFORM
+        </p>
+      </div>
     </div>
   </aside>
 

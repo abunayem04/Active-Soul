@@ -546,33 +546,58 @@ function initMobileDrawer() {
   const toggleBtn = document.getElementById('mobileNavToggle');
   const drawer = document.getElementById('mobileDrawer');
   const backdrop = document.getElementById('drawerBackdrop');
+  const closeBtn = document.getElementById('drawerCloseBtn');
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+  const drawerCtas = drawer ? drawer.querySelectorAll('[data-trigger-assessment]') : [];
+  const drawerBrand = drawer ? drawer.querySelector('.drawer-brand') : null;
 
-  if (!toggleBtn || !drawer || !backdrop) return;
+  if (!drawer) return;
 
   const openDrawer = () => {
     drawer.classList.add('open');
-    backdrop.classList.add('open');
+    if (backdrop) backdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
   };
 
   const closeDrawer = () => {
     drawer.classList.remove('open');
-    backdrop.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
     document.body.style.overflow = '';
   };
 
-  toggleBtn.addEventListener('click', () => {
-    if (drawer.classList.contains('open')) {
-      closeDrawer();
-    } else {
-      openDrawer();
-    }
-  });
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      if (drawer.classList.contains('open')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    });
+  }
 
-  backdrop.addEventListener('click', closeDrawer);
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeDrawer);
+  }
+
+  if (backdrop) {
+    backdrop.addEventListener('click', closeDrawer);
+  }
 
   mobileLinks.forEach(link => {
     link.addEventListener('click', closeDrawer);
+  });
+
+  drawerCtas.forEach(btn => {
+    btn.addEventListener('click', closeDrawer);
+  });
+
+  if (drawerBrand) {
+    drawerBrand.addEventListener('click', closeDrawer);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      closeDrawer();
+    }
   });
 }
