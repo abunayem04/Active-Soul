@@ -1103,13 +1103,26 @@ ul, ol {
 
 .system-step-item {
   background-color: #FFFFFF;
-  border: 1px solid var(--border-light);
+  border: 1.5px solid var(--border-light);
   border-radius: var(--radius-card);
   padding: clamp(1.75rem, 3vw, 2.5rem);
   padding-left: clamp(4rem, 5vw, 5rem);
   position: relative;
   cursor: pointer;
-  transition: all var(--transition-normal);
+  opacity: 0.48;
+  transform: scale(0.98);
+  transition: opacity 0.4s var(--ease-cinematic), transform 0.4s var(--ease-cinematic), border-color 0.4s var(--ease-cinematic), box-shadow 0.4s var(--ease-cinematic);
+}
+
+.system-step-item:hover {
+  opacity: 0.85;
+}
+
+.system-step-item.active {
+  opacity: 1;
+  transform: scale(1);
+  border-color: var(--text-primary);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
 }
 
 .system-step-item .step-num-node {
@@ -1120,7 +1133,7 @@ ul, ol {
   height: 24px;
   border-radius: 50%;
   background-color: #FFFFFF;
-  border: 2px solid var(--text-secondary);
+  border: 2px solid var(--border-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1137,14 +1150,10 @@ ul, ol {
   transition: all var(--transition-fast);
 }
 
-.system-step-item.active {
-  border-color: var(--text-primary);
-  box-shadow: var(--shadow-hover);
-}
-
 .system-step-item.active .step-num-node {
-  border-color: var(--accent-lime);
+  border-color: var(--text-primary);
   background-color: var(--text-primary);
+  box-shadow: 0 0 0 4px rgba(182, 255, 0, 0.4);
 }
 
 .system-step-item.active .step-num-node::after {
@@ -1155,8 +1164,9 @@ ul, ol {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
   font-weight: 700;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   margin-bottom: 0.5rem;
+  transition: color var(--transition-fast);
 }
 
 .system-step-item.active .step-num-tag {

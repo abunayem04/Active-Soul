@@ -170,18 +170,65 @@ function initGoalPanels() {
 }
 
 /* ==========================================================================
-   5. TRAINING SYSTEM (METHODOLOGY) STEP TRACKER
+   5. TRAINING SYSTEM (METHODOLOGY) STEP TRACKER & SCROLL-SPY
    ========================================================================== */
 function initMethodologySteps() {
   const stepItems = document.querySelectorAll('.system-step-item');
+  const systemSection = document.getElementById('system');
   if (!stepItems.length) return;
 
-  stepItems.forEach((step) => {
+  function setActiveStep(targetIndex) {
+    stepItems.forEach((step, idx) => {
+      if (idx === targetIndex) {
+        step.classList.add('active');
+      } else {
+        step.classList.remove('active');
+      }
+    });
+  }
+
+  // Click interaction
+  stepItems.forEach((step, idx) => {
     step.addEventListener('click', () => {
-      stepItems.forEach(s => s.classList.remove('active'));
-      step.classList.add('active');
+      setActiveStep(idx);
     });
   });
+
+  // Real-time Scroll-Spy calculation
+  const updateScrollSpy = () => {
+    const viewportHeight = window.innerHeight;
+    const triggerY = viewportHeight * 0.45; // Focus center zone at 45% of viewport
+
+    let activeIdx = 0;
+    let minDistance = Infinity;
+
+    stepItems.forEach((step, index) => {
+      const rect = step.getBoundingClientRect();
+      const stepCenter = rect.top + rect.height / 2;
+      const dist = Math.abs(stepCenter - triggerY);
+
+      // If the step is in or near the trigger line
+      if (rect.top <= viewportHeight * 0.7 && rect.bottom >= viewportHeight * 0.2) {
+        if (dist < minDistance) {
+          minDistance = dist;
+          activeIdx = index;
+        }
+      }
+    });
+
+    if (systemSection) {
+      const secRect = systemSection.getBoundingClientRect();
+      if (secRect.top < viewportHeight && secRect.bottom > 0) {
+        setActiveStep(activeIdx);
+      }
+    }
+  };
+
+  window.addEventListener('scroll', updateScrollSpy, { passive: true });
+  if (typeof lenis !== 'undefined' && lenis) {
+    lenis.on('scroll', updateScrollSpy);
+  }
+  updateScrollSpy();
 }
 
 /* ==========================================================================
