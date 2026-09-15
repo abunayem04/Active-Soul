@@ -3077,23 +3077,52 @@ ul, ol {
     font-size: 1.5rem;
   }
 
-  /* --- Hero Section Mobile (Headline First, Compact Athletic Runner) --- */
+  /* --- Hero Section Mobile (Character on Top, Text Underneath) --- */
   .hero-section {
-    padding-top: 1.5rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2.5rem;
     min-height: auto;
     display: block;
   }
 
   .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-visual-col {
+    order: 1;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+  }
+
+  .hero-runner-wrapper {
+    justify-content: center;
+    margin: 0 auto;
+    transform: none;
+    animation: heroFadeUp 0.8s var(--ease-cinematic) 0.15s forwards;
+  }
+
+  .hero-runner-img {
+    height: auto;
+    max-height: 290px;
+    width: auto;
+    max-width: 100%;
+    object-position: center bottom;
+    transform: none;
+    margin: 0 auto;
   }
 
   .hero-content {
-    order: 1;
+    order: 2;
     max-width: 100%;
     text-align: left;
+    margin-top: 0.5rem;
   }
 
   .hero-eyebrow {
@@ -3102,7 +3131,7 @@ ul, ol {
   }
 
   .hero-headline {
-    font-size: clamp(3.2rem, 13vw, 4.4rem);
+    font-size: clamp(3rem, 12vw, 4.2rem);
     line-height: 0.88;
     margin-bottom: 0.85rem;
   }
@@ -3118,39 +3147,13 @@ ul, ol {
     flex-direction: column;
     gap: 0.75rem;
     width: 100%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
   }
 
   .hero-actions .btn {
     width: 100%;
     justify-content: center;
     padding: 0.95rem 1.5rem;
-  }
-
-  .hero-visual-col {
-    order: 2;
-    width: 100%;
-    max-width: 360px;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    min-height: auto;
-  }
-
-  .hero-runner-wrapper {
-    justify-content: center;
-    margin: 0 auto;
-    transform: none;
-    animation: heroFadeUp 0.8s var(--ease-cinematic) 0.3s forwards;
-  }
-
-  .hero-runner-img {
-    height: auto;
-    max-height: 380px;
-    width: 100%;
-    object-position: center bottom;
-    transform: none;
-    margin: 0 auto;
   }
 
   .hero-bg-watermark {
