@@ -385,6 +385,7 @@ ul, ol {
   position: relative;
   z-index: 101;
   text-align: center;
+  overflow: hidden;
 }
 
 .announcement-inner {
@@ -393,6 +394,14 @@ ul, ol {
   justify-content: center;
   max-width: 1540px;
   margin: 0 auto;
+  width: 100%;
+}
+
+.announcement-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .announcement-content-wrap {
@@ -400,8 +409,14 @@ ul, ol {
   align-items: center;
   justify-content: center;
   gap: 0.85rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
   text-align: center;
+  flex-shrink: 0;
+}
+
+.announcement-duplicate {
+  display: none;
 }
 
 .announcement-badge {
@@ -416,11 +431,13 @@ ul, ol {
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .announcement-text {
   color: rgba(255, 255, 255, 0.88);
   line-height: 1.4;
+  white-space: nowrap;
 }
 
 .announcement-text strong {
@@ -439,12 +456,22 @@ ul, ol {
   display: inline-flex;
   align-items: center;
   margin-left: 0.35rem;
+  flex-shrink: 0;
 }
 
 .announcement-link:hover {
   text-decoration: underline;
   transform: translateX(3px);
   color: var(--accent-lime-hover);
+}
+
+@keyframes announcementMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 /* --- 5. NAVBAR --- */
@@ -3023,6 +3050,44 @@ ul, ol {
 }
 
 @media (max-width: 1024px) {
+  /* --- Top Announcement Bar Mobile & Tablet Marquee --- */
+  .top-announcement-bar {
+    padding: 0.45rem 0;
+    overflow: hidden;
+  }
+
+  .announcement-inner {
+    max-width: 100%;
+    padding: 0;
+    overflow: hidden;
+    justify-content: flex-start;
+  }
+
+  .announcement-track {
+    display: flex;
+    width: max-content;
+    justify-content: flex-start;
+    animation: announcementMarquee 24s linear infinite;
+    will-change: transform;
+  }
+
+  .announcement-track:hover,
+  .announcement-track:active {
+    animation-play-state: paused;
+  }
+
+  .announcement-content-wrap {
+    gap: 0.75rem;
+    padding: 0 2rem;
+    font-size: 0.76rem;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .announcement-duplicate {
+    display: inline-flex;
+  }
+
   .hero-grid {
     grid-template-columns: 1.05fr 1fr;
     gap: 2rem;
@@ -3040,14 +3105,15 @@ ul, ol {
 @media (max-width: 768px) {
   /* --- Top Announcement Bar Mobile --- */
   .top-announcement-bar {
-    padding: 0.4rem 0.75rem;
+    padding: 0.42rem 0;
   }
 
   .announcement-content-wrap {
-    gap: 0.4rem;
+    gap: 0.65rem;
     font-size: 0.72rem;
-    line-height: 1.35;
-    justify-content: center;
+    padding: 0 1.5rem;
+    white-space: nowrap;
+    flex-wrap: nowrap;
   }
 
   .announcement-badge {
@@ -3057,11 +3123,12 @@ ul, ol {
 
   .announcement-text {
     font-size: 0.72rem;
+    white-space: nowrap;
   }
 
   .announcement-link {
     font-size: 0.72rem;
-    display: inline-block;
+    white-space: nowrap;
   }
 
   /* --- Navbar Mobile --- */
