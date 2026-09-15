@@ -3017,75 +3017,15 @@ ul, ol {
 /* --- 21. RESPONSIVE DESIGN BREAKPOINTS --- */
 @media (max-width: 1200px) {
   .hero-grid {
-    grid-template-columns: 1fr 0.9fr;
-  }
-  .coaches-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .tech-dashboard-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
 }
 
 @media (max-width: 1024px) {
   .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .hero-visual-col {
-    order: -1;
-    max-width: 540px;
-    min-height: auto;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .hero-runner-wrapper {
-    justify-content: center;
-  }
-
-  .hero-runner-img {
-    height: auto;
-    max-height: 540px;
-    width: 100%;
-    object-position: center bottom;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-  }
-
-  .stat-item:nth-child(2)::after {
-    display: none;
-  }
-
-  .programs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .system-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .system-sticky-col {
-    position: static;
-  }
-
-  .results-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-
-  .footer-top-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 2rem;
   }
 
   .nav-menu, .nav-cta-wrapper .btn {
@@ -3098,64 +3038,355 @@ ul, ol {
 }
 
 @media (max-width: 768px) {
-  .goal-panel {
-    grid-template-columns: 40px 1fr auto;
-    gap: 1rem;
+  /* --- Top Announcement Bar Mobile --- */
+  .top-announcement-bar {
+    padding: 0.4rem 0.75rem;
   }
 
-  .goal-desc {
-    grid-column: 2 / -1;
+  .announcement-content-wrap {
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    line-height: 1.35;
+    justify-content: center;
   }
 
-  .stats-grid {
-    grid-template-columns: 1fr 1fr;
+  .announcement-badge {
+    font-size: 0.625rem;
+    padding: 0.12rem 0.45rem;
   }
 
-  .tech-header-grid {
+  .announcement-text {
+    font-size: 0.72rem;
+  }
+
+  .announcement-link {
+    font-size: 0.72rem;
+    display: inline-block;
+  }
+
+  /* --- Navbar Mobile --- */
+  .navbar {
+    padding: 0.65rem 0;
+  }
+
+  .brand-logo-img {
+    height: 28px;
+  }
+
+  .brand-logo-text {
+    font-size: 1.5rem;
+  }
+
+  /* --- Hero Section Mobile (Headline First, Compact Athletic Runner) --- */
+  .hero-section {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    min-height: auto;
+    display: block;
+  }
+
+  .hero-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  .tech-tabs {
-    justify-content: flex-start;
+  .hero-content {
+    order: 1;
+    max-width: 100%;
+    text-align: left;
   }
 
-  .footer-top-grid {
-    grid-template-columns: 1fr;
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
-  .footer-bottom-bar {
-    flex-direction: column;
-    gap: 1.25rem;
-    text-align: center;
+  .hero-headline {
+    font-size: clamp(3.2rem, 13vw, 4.4rem);
+    line-height: 0.88;
+    margin-bottom: 0.85rem;
   }
-}
 
-@media (max-width: 480px) {
+  .hero-copy {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+    max-width: 100%;
+  }
+
   .hero-actions {
     flex-direction: column;
-    align-items: stretch;
+    gap: 0.75rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
   }
 
   .hero-actions .btn {
     width: 100%;
+    justify-content: center;
+    padding: 0.95rem 1.5rem;
   }
 
-  .final-cta-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .final-cta-actions .btn {
+  .hero-visual-col {
+    order: 2;
     width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+  }
+
+  .hero-runner-wrapper {
+    justify-content: center;
+    margin: 0 auto;
+    transform: none;
+    animation: heroFadeUp 0.8s var(--ease-cinematic) 0.3s forwards;
+  }
+
+  .hero-runner-img {
+    height: auto;
+    max-height: 380px;
+    width: 100%;
+    object-position: center bottom;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .hero-bg-watermark {
+    font-size: clamp(4.5rem, 20vw, 7.5rem);
+    left: 2%;
+    bottom: 0;
+    opacity: 0.04;
+  }
+
+  /* --- Trust Stats Mobile --- */
+  .trust-section {
+    padding: 2.25rem 0;
   }
 
   .stats-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: clamp(2rem, 8vw, 2.75rem);
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
   }
 
   .stat-item::after {
     display: none;
+  }
+
+  /* --- Section Generic Mobile --- */
+  .section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    line-height: 0.95;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  /* --- Batch 8 Spotlight Mobile --- */
+  .batch-spotlight-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .batch-spotlight-title {
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    line-height: 0.95;
+  }
+
+  .batch-spotlight-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .batch-perks-row {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .batch-spotlight-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .batch-spotlight-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* --- Programs Grid Mobile --- */
+  .programs-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .program-content {
+    padding: 1.35rem;
+  }
+
+  .program-title {
+    font-size: 2rem;
+  }
+
+  /* --- Methodology Mobile --- */
+  .system-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .system-sticky-col {
+    position: static;
+  }
+
+  .system-steps-list::before {
+    left: 16px;
+  }
+
+  .system-step-item {
+    padding: 1.25rem 1.25rem 1.25rem 3.25rem;
+    border-radius: 12px;
+  }
+
+  .system-step-item .step-num-node {
+    left: 7px;
+    top: 1.25rem;
+    width: 20px;
+    height: 20px;
+  }
+
+  .step-name {
+    font-size: 1.5rem;
+  }
+
+  .step-desc {
+    font-size: 0.875rem;
+  }
+
+  /* --- Transformation Cards Mobile --- */
+  .results-filter-bar {
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .filter-tab-btn {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.7rem;
+  }
+
+  .transformation-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .transform-card {
+    padding: 1.25rem;
+  }
+
+  .transform-stats-box {
+    padding: 1rem;
+  }
+
+  .t-stat-val {
+    font-size: 1.05rem;
+  }
+
+  .delta-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.55rem;
+  }
+
+  /* --- Events Mobile --- */
+  .event-tabs-bar {
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .event-tab-btn {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.7rem;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .event-card {
+    padding: 1.35rem;
+  }
+
+  /* --- About Section Mobile --- */
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-p {
+    font-size: 0.95rem;
+  }
+
+  .about-profile-proof {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  /* --- Admission Form Mobile --- */
+  .admission-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .admission-form {
+    padding: 1.35rem;
+    border-radius: 12px;
+  }
+
+  .form-title {
+    font-size: 1.65rem;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    font-size: 16px; /* Prevents iOS auto-zoom on input focus */
+    padding: 0.75rem 1rem;
+  }
+
+  /* --- Footer Mobile --- */
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  /* --- Mobile Drawer Menu --- */
+  .mobile-drawer {
+    max-width: 100%;
+    width: 100%;
+    padding: 5rem 2rem 2rem;
+  }
+
+  .mobile-nav-link {
+    font-size: 1.85rem;
   }
 }
 
