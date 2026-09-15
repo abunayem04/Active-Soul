@@ -227,69 +227,89 @@ ul, ol {
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 0.95rem 1.85rem;
   border-radius: var(--radius-btn);
   position: relative;
   overflow: hidden;
-  transition: all var(--transition-fast);
+  transition: background-color 0.35s var(--ease-cinematic),
+              color 0.35s var(--ease-cinematic),
+              border-color 0.35s var(--ease-cinematic),
+              box-shadow 0.35s var(--ease-cinematic),
+              transform 0.35s var(--ease-cinematic);
   white-space: nowrap;
 }
 
 .btn-arrow {
   display: inline-block;
-  transition: transform var(--transition-fast);
+  transition: transform 0.35s var(--ease-cinematic), color 0.35s var(--ease-cinematic);
 }
 
-.btn:hover .btn-arrow {
-  transform: translateX(5px);
-}
-
-/* Primary CTA: High contrast Electric Lime */
+/* Primary CTA: Vibrant Lime -> Inverts to Deep Black with Lime Text on Hover */
 .btn-primary {
   background-color: var(--accent-lime);
-  color: #050505;
-  border: 1px solid var(--accent-lime);
+  color: #0A0A0A;
+  border: 1.5px solid var(--accent-lime);
   font-weight: 700;
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-lime-hover);
-  box-shadow: var(--shadow-lime);
-  transform: translateY(-2px);
+  background-color: #0A0A0A;
+  color: var(--accent-lime);
+  border-color: #0A0A0A;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22), 0 0 25px var(--accent-lime-glow);
+  transform: translateY(-3px);
+}
+
+.btn-primary:hover .btn-arrow {
+  transform: translateX(6px);
+  color: var(--accent-lime);
 }
 
 .btn-primary:active {
   transform: translateY(0);
 }
 
-/* Secondary CTA: Architectural Dark Minimal */
+/* Secondary CTA: Architectural Minimal -> Vibrant Lime on Hover */
 .btn-secondary {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: var(--text-primary);
-  border: 1px solid var(--border-light);
+  border: 1.5px solid var(--border-light);
+  font-weight: 600;
 }
 
 .btn-secondary:hover {
-  background-color: var(--text-primary);
-  color: #FFFFFF;
-  border-color: var(--text-primary);
-  transform: translateY(-2px);
+  background-color: var(--accent-lime);
+  color: #0A0A0A;
+  border-color: var(--accent-lime);
+  box-shadow: var(--shadow-lime);
+  transform: translateY(-3px);
+}
+
+.btn-secondary:hover .btn-arrow {
+  transform: translateX(6px);
+  color: #0A0A0A;
 }
 
 /* On-dark buttons */
 .btn-on-dark {
   background-color: transparent;
   color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
 }
 
 .btn-on-dark:hover {
-  background-color: #FFFFFF;
-  color: #000000;
-  border-color: #FFFFFF;
-  transform: translateY(-2px);
+  background-color: var(--accent-lime);
+  color: #0A0A0A;
+  border-color: var(--accent-lime);
+  box-shadow: 0 10px 30px rgba(182, 255, 0, 0.45);
+  transform: translateY(-3px);
+}
+
+.btn-on-dark:hover .btn-arrow {
+  transform: translateX(6px);
+  color: #0A0A0A;
 }
 
 /* Link CTA */
@@ -343,70 +363,64 @@ ul, ol {
   right: 0;
   z-index: 100;
   transition: all var(--transition-normal);
-  padding: 1.5rem 0;
+  padding: 1.25rem 0;
   background-color: transparent;
 }
 
 .navbar.scrolled {
-  padding: 0.85rem 0;
-  background-color: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  padding: 0.75rem 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-light);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
 }
 
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 3.5rem;
 }
 
 .brand-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  font-family: var(--font-display);
-  font-size: 1.85rem;
-  letter-spacing: 0.05em;
-  color: var(--text-primary);
+  gap: 0.95rem;
   user-select: none;
-}
-
-.brand-logo-img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
+  text-decoration: none;
   transition: transform var(--transition-fast);
 }
 
+.brand-logo-img {
+  height: clamp(34px, 3.8vw, 42px);
+  width: auto;
+  aspect-ratio: 690 / 568;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08));
+  transition: transform 0.35s var(--ease-cinematic), filter 0.35s var(--ease-cinematic);
+}
+
+.brand-logo-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 2.2vw, 2.25rem);
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  line-height: 0.9;
+  display: inline-block;
+  padding-top: 2px;
+}
+
 .brand-logo:hover .brand-logo-img {
-  transform: scale(1.08);
-}
-
-.brand-mark {
-  width: 26px;
-  height: 26px;
-  background-color: var(--text-primary);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-}
-
-.brand-mark-inner {
-  width: 8px;
-  height: 8px;
-  background-color: var(--accent-lime);
-  border-radius: 1px;
+  transform: scale(1.1) rotate(2deg);
+  filter: drop-shadow(0 4px 14px var(--accent-lime-glow));
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2.25rem;
+  gap: 2.75rem;
 }
 
 .nav-link {
@@ -414,7 +428,7 @@ ul, ol {
   font-weight: 600;
   color: var(--text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   position: relative;
   padding: 0.4rem 0;
   transition: color var(--transition-fast);
@@ -468,7 +482,7 @@ ul, ol {
 
 /* --- 6. HERO SECTION (COLOSSAL RUNNER FOCAL POINT) --- */
 .hero-section {
-  padding-top: clamp(6rem, 8vw, 7.5rem);
+  padding-top: clamp(5.5rem, 7.5vw, 7rem);
   padding-bottom: 0;
   position: relative;
   overflow: hidden;
@@ -487,7 +501,7 @@ ul, ol {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(440px, 0.9fr) minmax(620px, 1.35fr);
+  grid-template-columns: minmax(420px, 0.9fr) minmax(620px, 1.35fr);
   align-items: center;
   gap: clamp(1rem, 3vw, 3rem);
   position: relative;
@@ -496,7 +510,7 @@ ul, ol {
 }
 
 .hero-content {
-  max-width: 620px;
+  max-width: 580px;
   position: relative;
   z-index: 3;
 }
@@ -508,8 +522,8 @@ ul, ol {
 }
 
 .hero-headline {
-  font-size: clamp(4.25rem, 8.5vw, 8.5rem);
-  line-height: 0.88;
+  font-size: clamp(3.4rem, 6.4vw, 6.6rem);
+  line-height: 0.92;
   margin-bottom: 1.5rem;
   color: var(--text-primary);
   overflow: hidden;
@@ -535,10 +549,10 @@ ul, ol {
 }
 
 .hero-copy {
-  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  font-size: clamp(1.05rem, 1.25vw, 1.2rem);
   color: var(--text-secondary);
   line-height: 1.6;
-  max-width: 500px;
+  max-width: 480px;
   margin-bottom: 2.25rem;
   opacity: 0;
   transform: translateY(20px);
@@ -593,14 +607,14 @@ ul, ol {
   animation: pulseGlow 2s infinite;
 }
 
-/* Hero Visual (Colossal Dominant Runner) */
+/* Hero Visual (Colossal Dominant Runner - Feet reaching lower edge) */
 .hero-visual-col {
   position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   height: 100%;
-  min-height: clamp(550px, 80vh, 900px);
+  min-height: clamp(580px, 85vh, 960px);
 }
 
 .hero-runner-wrapper {
@@ -612,13 +626,14 @@ ul, ol {
   opacity: 0;
   transform: translateX(50px) scale(0.96);
   animation: heroRunnerEnter 1.2s var(--ease-cinematic) 0.3s forwards;
+  margin-bottom: -15px;
 }
 
 .hero-runner-img {
   width: auto;
   max-width: 100%;
-  height: clamp(640px, 89vh, 1020px);
-  max-height: 94vh;
+  height: clamp(680px, 94vh, 1080px);
+  max-height: 96vh;
   object-fit: contain;
   object-position: bottom right;
   filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.12));
@@ -626,15 +641,15 @@ ul, ol {
   pointer-events: none;
 }
 
-/* Hero Background Watermark Typography */
+/* Hero Background Watermark Typography (Subtle & Interacting with Runner) */
 .hero-bg-watermark {
   position: absolute;
-  right: -2%;
-  bottom: -3%;
+  right: 0;
+  bottom: 4%;
   font-family: var(--font-display);
   font-size: clamp(8rem, 20vw, 24rem);
   line-height: 0.8;
-  color: rgba(0, 0, 0, 0.025);
+  color: rgba(0, 0, 0, 0.015);
   user-select: none;
   pointer-events: none;
   z-index: 1;
