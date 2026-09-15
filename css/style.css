@@ -364,22 +364,24 @@ ul, ol {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   z-index: 101;
+  text-align: center;
 }
 
 .announcement-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+  justify-content: center;
   max-width: 1540px;
   margin: 0 auto;
 }
 
-.announcement-left {
-  display: flex;
+.announcement-content-wrap {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.85rem;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .announcement-badge {
@@ -392,10 +394,12 @@ ul, ol {
   border-radius: var(--radius-badge);
   letter-spacing: 0.05em;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
 }
 
 .announcement-text {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
   line-height: 1.4;
 }
 
@@ -411,12 +415,16 @@ ul, ol {
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   white-space: nowrap;
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.35rem;
 }
 
 .announcement-link:hover {
   text-decoration: underline;
   transform: translateX(3px);
+  color: var(--accent-lime-hover);
 }
 
 /* --- 5. NAVBAR --- */
