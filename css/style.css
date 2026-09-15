@@ -575,7 +575,7 @@ ul, ol {
   padding-top: 0.5rem;
   padding-bottom: 0;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   background-color: var(--bg-main);
   min-height: calc(100vh - 90px);
   min-height: calc(100dvh - 90px);
@@ -719,7 +719,7 @@ ul, ol {
   animation: pulseGlow 2s infinite;
 }
 
-/* Hero Visual (Colossal Dominant Runner Overlapping Navbar) */
+/* Hero Visual (Colossal Dominant Runner) */
 .hero-visual-col {
   position: relative;
   display: flex;
@@ -728,7 +728,7 @@ ul, ol {
   height: 100%;
   min-height: 0;
   align-self: stretch;
-  z-index: 102;
+  z-index: 2;
 }
 
 .hero-runner-wrapper {
@@ -741,22 +741,21 @@ ul, ol {
   opacity: 0;
   transform: translateX(40px);
   animation: heroRunnerEnter 1.2s var(--ease-cinematic) 0.3s forwards;
-  margin-bottom: -10px;
-  z-index: 102;
-  margin-top: -65px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .hero-runner-img {
   width: auto;
-  max-width: 130%;
-  height: clamp(660px, 94vh, 1050px);
+  max-width: 100%;
+  height: clamp(520px, 84vh, 880px);
+  max-height: calc(100vh - 100px);
+  max-height: calc(100dvh - 100px);
   object-fit: contain;
   object-position: bottom right;
-  filter: drop-shadow(0 30px 65px rgba(0, 0, 0, 0.16));
+  filter: drop-shadow(0 25px 60px rgba(0, 0, 0, 0.15));
   user-select: none;
   pointer-events: none;
-  transform: scale(1.15);
-  transform-origin: bottom right;
 }
 
 /* Hero Background Watermark Typography (Spanning Behind Athlete in Lower Half) */
