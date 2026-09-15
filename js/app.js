@@ -1,6 +1,6 @@
 /**
- * ACTIVE SOUL — HUMAN PERFORMANCE SYSTEM
- * Core Application Logic & Micro-Interactions
+ * ACTIVE SOUL — BANGLADESH'S FIRST ISLAMIC FITNESS PLATFORM
+ * Core Application Logic, Micro-Interactions & Batch 8 Handlers
  * Philosophy: LESS, BUT BETTER.
  */
 
@@ -11,9 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initGoalPanels();
   initMethodologySteps();
   initCompareSlider();
-  initTechDashboard();
-  initTestimonialSlider();
-  initPricingToggle();
+  initFaqAccordion();
+  initResultsFilters();
+  initEventTabs();
+  initAdmissionForm();
   initAssessmentModal();
   initMobileDrawer();
 });
@@ -122,7 +123,7 @@ function initMethodologySteps() {
   const stepItems = document.querySelectorAll('.system-step-item');
   if (!stepItems.length) return;
 
-  stepItems.forEach((step, index) => {
+  stepItems.forEach((step) => {
     step.addEventListener('click', () => {
       stepItems.forEach(s => s.classList.remove('active'));
       step.classList.add('active');
@@ -149,215 +150,157 @@ function initCompareSlider() {
     updatePosition(e.target.value);
   });
 
-  // Touch and mouse smooth movement
   rangeInput.addEventListener('change', (e) => {
     updatePosition(e.target.value);
   });
 }
 
 /* ==========================================================================
-   7. TECHNOLOGY & TELEMETRY HUD DASHBOARD
+   7. FAQ ACCORDION INTERACTION
    ========================================================================== */
-const techData = {
-  strain: {
-    title: 'DAY STRAIN ACCUMULATION',
-    val: '16.8',
-    unit: '/ 21',
-    chartPath: 'M0,110 C50,105 90,85 140,75 C190,65 240,80 300,50 C360,20 420,35 480,15 L500,10',
-    stat1Label: 'PEAK METABOLIC RATE',
-    stat1Val: '782 CAL',
-    stat1Badge: 'ZONE 4 DOMINANT',
-    stat2Label: 'RECOVERY DEMAND',
-    stat2Val: 'HIGH',
-    stat2Badge: '8.4 HRS SLEEP ADVICE'
-  },
-  recovery: {
-    title: 'PHYSIOLOGICAL RECOVERY SCORE',
-    val: '94%',
-    unit: 'OPTIMAL',
-    chartPath: 'M0,90 C60,80 120,50 180,40 C240,30 320,25 400,18 C450,15 480,12 500,10',
-    stat1Label: 'RESTING HEART RATE',
-    stat1Val: '46 BPM',
-    stat1Badge: '-4 BPM FROM BASELINE',
-    stat2Label: 'HRV (R-R INTERVAL)',
-    stat2Val: '118 MS',
-    stat2Badge: '+14% PARASYMPATHETIC'
-  },
-  zones: {
-    title: 'TIME IN ANAEROBIC THRESHOLD',
-    val: '42:15',
-    unit: 'MINS',
-    chartPath: 'M0,120 C70,115 130,95 200,60 C260,30 330,45 400,20 C450,10 480,15 500,8',
-    stat1Label: 'LACTATE TURNING POINT',
-    stat1Val: '172 BPM',
-    stat1Badge: 'SUSTAINED 22 MINS',
-    stat2Label: 'VO2 PEAK ESTIMATE',
-    stat2Val: '58.4',
-    stat2Badge: 'TOP 2% ELITE'
-  },
-  biomechanics: {
-    title: 'CADENCE & GROUND REACTION',
-    val: '182',
-    unit: 'SPM',
-    chartPath: 'M0,70 C60,68 120,65 180,62 C250,55 320,50 390,45 C440,40 480,38 500,35',
-    stat1Label: 'GROUND CONTACT TIME',
-    stat1Val: '208 MS',
-    stat1Badge: 'SYMMETRIC 50.1 / 49.9',
-    stat2Label: 'VERTICAL OSCILLATION',
-    stat2Val: '6.4 CM',
-    stat2Badge: 'EXCELLENT EFFICIENCY'
-  }
-};
+function initFaqAccordion() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  if (!faqItems.length) return;
 
-function initTechDashboard() {
-  const tabs = document.querySelectorAll('.tech-tab-btn');
-  const titleEl = document.getElementById('telemetryTitle');
-  const valEl = document.getElementById('telemetryVal');
-  const chartLine = document.getElementById('telemetryChartLine');
-  const mini1Label = document.getElementById('techMini1Label');
-  const mini1Val = document.getElementById('techMini1Val');
-  const mini1Badge = document.getElementById('techMini1Badge');
-  const mini2Label = document.getElementById('techMini2Label');
-  const mini2Val = document.getElementById('techMini2Val');
-  const mini2Badge = document.getElementById('techMini2Badge');
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-question-btn');
+    if (!btn) return;
 
-  if (!tabs.length || !chartLine) return;
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('active');
 
-  // Chart scroll observer for draw-in
-  const chartObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        chartLine.classList.add('animated');
+      // Close all items for smooth accordion UX
+      faqItems.forEach(i => {
+        i.classList.remove('active');
+        const b = i.querySelector('.faq-question-btn');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        item.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
       }
     });
-  }, { threshold: 0.3 });
-
-  chartObserver.observe(chartLine);
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      const mode = tab.getAttribute('data-tech');
-      const data = techData[mode];
-      if (!data) return;
-
-      // Animate line reload
-      chartLine.classList.remove('animated');
-      chartLine.setAttribute('d', data.chartPath);
-      setTimeout(() => chartLine.classList.add('animated'), 50);
-
-      titleEl.textContent = data.title;
-      valEl.innerHTML = `${data.val} <span class="val-unit">${data.unit}</span>`;
-      
-      mini1Label.textContent = data.stat1Label;
-      mini1Val.textContent = data.stat1Val;
-      mini1Badge.textContent = data.stat1Badge;
-
-      mini2Label.textContent = data.stat2Label;
-      mini2Val.textContent = data.stat2Val;
-      mini2Badge.textContent = data.stat2Badge;
-    });
   });
 }
 
 /* ==========================================================================
-   8. MINIMAL TESTIMONIAL SLIDER
+   8. RESULTS BATCH & TRACK FILTERING
    ========================================================================== */
-const testimonials = [
-  {
-    quote: "“I DIDN'T JUST GET STRONGER. I BECAME MORE DISCIPLINED.”",
-    author: "MARCUS VANCE",
-    role: "HYBRID PERFORMANCE MEMBER // 18 MONTHS"
-  },
-  {
-    quote: "“THE PROGRAMMING REMOVED ALL GUESSWORK. IT FEELS LIKE TRAINING FOR AN OLYMPIC CYCLE WITH EVERYDAY CLARITY.”",
-    author: "ELENA ROSTOVA",
-    role: "ENDURANCE & MARATHON TRACK // 2 YEARS"
-  },
-  {
-    quote: "“PRECISION AT ITS HIGHEST LEVEL. MY MOBILITY HAS SURPASSED WHERE I WAS A DECADE AGO.”",
-    author: "DAVID CHEN",
-    role: "STRENGTH & LONGEVITY TRACK // 14 MONTHS"
-  }
-];
+function initResultsFilters() {
+  const filterBtns = document.querySelectorAll('.filter-tab-btn');
+  const cards = document.querySelectorAll('.transform-card');
 
-function initTestimonialSlider() {
-  let currentIndex = 0;
-  const quoteEl = document.getElementById('testQuote');
-  const authorEl = document.getElementById('testAuthor');
-  const roleEl = document.getElementById('testRole');
-  const prevBtn = document.getElementById('prevTestimonial');
-  const nextBtn = document.getElementById('nextTestimonial');
+  if (!filterBtns.length || !cards.length) return;
 
-  if (!quoteEl || !prevBtn || !nextBtn) return;
-
-  function renderQuote(index) {
-    quoteEl.style.opacity = '0';
-    quoteEl.style.transform = 'translateY(10px)';
-
-    setTimeout(() => {
-      const item = testimonials[index];
-      quoteEl.textContent = item.quote;
-      authorEl.textContent = item.author;
-      roleEl.textContent = item.role;
-
-      quoteEl.style.transition = 'opacity 0.4s var(--ease-cinematic), transform 0.4s var(--ease-cinematic)';
-      quoteEl.style.opacity = '1';
-      quoteEl.style.transform = 'translateY(0)';
-    }, 200);
-  }
-
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-    renderQuote(currentIndex);
-  });
-
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % testimonials.length;
-    renderQuote(currentIndex);
-  });
-}
-
-/* ==========================================================================
-   9. PRICING BILLING CYCLE TOGGLE
-   ========================================================================== */
-function initPricingToggle() {
-  const toggleWrapper = document.getElementById('billingToggle');
-  const starterPrice = document.getElementById('priceStarter');
-  const perfPrice = document.getElementById('pricePerformance');
-  const elitePrice = document.getElementById('priceElite');
-
-  if (!toggleWrapper || !starterPrice) return;
-
-  const buttons = toggleWrapper.querySelectorAll('.toggle-opt');
-  
-  buttons.forEach(btn => {
+  filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const isAnnual = btn.getAttribute('data-cycle') === 'annual';
-      if (isAnnual) {
-        starterPrice.textContent = '64';
-        perfPrice.textContent = '119';
-        elitePrice.textContent = '229';
-      } else {
-        starterPrice.textContent = '79';
-        perfPrice.textContent = '149';
-        elitePrice.textContent = '289';
-      }
+      const filter = btn.getAttribute('data-filter');
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 40);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(15px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 200);
+        }
+      });
     });
   });
 }
 
 /* ==========================================================================
-   10. INTERACTIVE ONBOARDING ASSESSMENT MODAL
+   9. EVENTS STATUS TABS FILTERING
+   ========================================================================== */
+function initEventTabs() {
+  const eventTabs = document.querySelectorAll('.event-tab-btn');
+  const eventCards = document.querySelectorAll('.event-card');
+
+  if (!eventTabs.length || !eventCards.length) return;
+
+  eventTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      eventTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const status = tab.getAttribute('data-event-tab');
+
+      eventCards.forEach(card => {
+        const cardStatus = card.getAttribute('data-event-status');
+        if (status === 'all' || cardStatus === status) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 40);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(15px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 200);
+        }
+      });
+    });
+  });
+}
+
+/* ==========================================================================
+   10. BATCH 8 ADMISSION & ENQUIRY FORM SUBMISSION
+   ========================================================================== */
+function initAdmissionForm() {
+  const form = document.getElementById('batch8AdmissionForm');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('applicantName').value.trim();
+    const phone = document.getElementById('applicantPhone').value.trim();
+    const goal = document.getElementById('applicantGoal').value;
+    const place = document.getElementById('applicantPlace').value;
+    const notes = document.getElementById('applicantNotes').value.trim();
+
+    // Create WhatsApp message URI
+    const message = `Assalamu Alaikum Active Soul Team,\nI want to enroll in Batch 8 (90-Day Transformation).\n\nName: ${name}\nPhone: ${phone}\nGoal: ${goal}\nLocation: ${place}\nNotes: ${notes || 'N/A'}`;
+    const encodedMsg = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/8801700000000?text=${encodedMsg}`;
+
+    // Provide friendly confirmation
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+
+    submitBtn.innerHTML = `✓ ENQUIRY RECORDED! REDIRECTING...`;
+    submitBtn.style.backgroundColor = '#15803d';
+    submitBtn.style.color = '#FFFFFF';
+
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+      form.reset();
+      submitBtn.innerHTML = originalText;
+      submitBtn.style.backgroundColor = '';
+      submitBtn.style.color = '';
+    }, 1200);
+  });
+}
+
+/* ==========================================================================
+   11. INTERACTIVE ONBOARDING ASSESSMENT MODAL
    ========================================================================== */
 let currentModalStep = 1;
-let selectedGoal = 'STRENGTH & POWER';
-let selectedFrequency = '4 - 5 DAYS / WEEK';
+let selectedGoal = 'WEIGHT LOSS';
+let selectedEnvironment = 'HOME WORKOUT';
 
 function initAssessmentModal() {
   const modalOverlay = document.getElementById('assessmentModal');
@@ -369,7 +312,12 @@ function initAssessmentModal() {
   triggerBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      openModal();
+      const presetGoal = btn.getAttribute('data-goal');
+      if (presetGoal) {
+        openAssessmentModalWithGoal(presetGoal);
+      } else {
+        openModal();
+      }
     });
   });
 
@@ -402,7 +350,7 @@ function initAssessmentModal() {
     btn.addEventListener('click', () => {
       step2Opts.forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
-      selectedFrequency = btn.getAttribute('data-val');
+      selectedEnvironment = btn.getAttribute('data-val');
       setTimeout(() => finalizeRecommendation(), 220);
     });
   });
@@ -477,25 +425,22 @@ function finalizeRecommendation() {
 
   if (!recGoal || !recProgram) return;
 
-  recGoal.textContent = selectedGoal;
+  recGoal.textContent = `${selectedGoal} (${selectedEnvironment})`;
 
-  if (selectedGoal.includes('RUN') || selectedGoal.includes('ENDURANCE')) {
-    recProgram.textContent = 'RUNNING & AEROBIC CAPACITY TRACK';
-    recDesc.textContent = `Optimized for ${selectedFrequency} with progressive threshold running, cadence efficiency, and VO2-max development.`;
-  } else if (selectedGoal.includes('MUSCLE') || selectedGoal.includes('STRONGER')) {
-    recProgram.textContent = 'STRENGTH & HYPERTROPHY TRACK';
-    recDesc.textContent = `Programmed for ${selectedFrequency} with mechanical tension, periodized load progression, and biometric recovery windows.`;
-  } else if (selectedGoal.includes('MOBILITY') || selectedGoal.includes('MOVE')) {
-    recProgram.textContent = 'MOBILITY & KINETIC LONGEVITY TRACK';
-    recDesc.textContent = `Calibrated for ${selectedFrequency} focusing on thoracic expansion, joint articulation, and nervous system regeneration.`;
+  if (selectedGoal.includes('LOSS')) {
+    recProgram.textContent = 'WEIGHT LOSS (FAT LOSS) TRACK';
+    recDesc.textContent = `Optimized 90-day protocol for ${selectedEnvironment} focusing on sustainable caloric deficit, metabolic conditioning, and lean muscle preservation.`;
+  } else if (selectedGoal.includes('GAIN')) {
+    recProgram.textContent = 'WEIGHT GAIN & HYPERTROPHY TRACK';
+    recDesc.textContent = `Structured 90-day protocol for ${selectedEnvironment} emphasizing progressive overload, clean surplus macros, and muscular density.`;
   } else {
-    recProgram.textContent = 'HYBRID ATHLETIC PERFORMANCE TRACK';
-    recDesc.textContent = `High-output protocol programmed for ${selectedFrequency} combining maximum strength, aerobic power, and athletic longevity.`;
+    recProgram.textContent = 'BODY RECOMPOSITION TRACK';
+    recDesc.textContent = `Calibrated 90-day protocol for ${selectedEnvironment} combining simultaneous fat loss, muscle tone development, and deshi nutrition.`;
   }
 }
 
 /* ==========================================================================
-   11. MOBILE NAVIGATION DRAWER
+   12. MOBILE NAVIGATION DRAWER
    ========================================================================== */
 function initMobileDrawer() {
   const toggleBtn = document.getElementById('mobileNavToggle');
