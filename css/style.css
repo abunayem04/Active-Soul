@@ -584,45 +584,49 @@ ul, ol {
 }
 
 .hero-container-custom {
-  max-width: 1620px;
+  max-width: 1720px;
   width: 100%;
-  padding-left: clamp(1.5rem, 4vw, 4rem);
-  padding-right: clamp(1rem, 2.5vw, 2rem);
+  padding-left: clamp(1.5rem, 4vw, 4.5rem);
+  padding-right: clamp(1rem, 2vw, 2.5rem);
   position: relative;
   z-index: 2;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(440px, 1fr) minmax(520px, 1.25fr);
+  grid-template-columns: minmax(460px, 1.05fr) minmax(540px, 1.35fr);
   align-items: center;
-  gap: clamp(1.25rem, 2.5vw, 2.75rem);
+  gap: clamp(1rem, 2vw, 2.5rem);
   position: relative;
   z-index: 2;
   width: 100%;
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 680px;
   position: relative;
   z-index: 3;
 }
 
 .hero-eyebrow {
-  margin-bottom: clamp(0.5rem, 1vh, 0.85rem);
+  margin-bottom: clamp(0.6rem, 1.2vh, 1rem);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   opacity: 0;
   transform: translateY(20px);
   animation: heroFadeUp 0.8s var(--ease-cinematic) 0.15s forwards;
 }
 
 .hero-headline {
-  font-size: clamp(3.8rem, 6.2vw, 6.6rem);
-  line-height: 0.88;
-  margin-bottom: clamp(0.85rem, 1.6vh, 1.35rem);
+  font-size: clamp(4.5rem, 8vw, 8.8rem);
+  line-height: 0.85;
+  margin-bottom: clamp(1rem, 2vh, 1.5rem);
   color: var(--text-primary);
   overflow: hidden;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
+  font-weight: 900;
 }
 
 .hero-headline-line {
@@ -649,12 +653,12 @@ ul, ol {
 }
 
 .hero-copy {
-  font-size: clamp(0.95rem, 1.1vw, 1.125rem);
+  font-size: clamp(1.05rem, 1.25vw, 1.25rem);
   font-weight: 400;
   color: var(--text-secondary);
   line-height: 1.6;
-  max-width: 500px;
-  margin-bottom: clamp(1.15rem, 2.2vh, 1.85rem);
+  max-width: 540px;
+  margin-bottom: clamp(1.25rem, 2.5vh, 2rem);
   opacity: 0;
   transform: translateY(20px);
   animation: heroFadeUp 0.8s var(--ease-cinematic) 0.8s forwards;
@@ -669,6 +673,13 @@ ul, ol {
   opacity: 0;
   transform: translateY(20px);
   animation: heroFadeUp 0.8s var(--ease-cinematic) 0.95s forwards;
+}
+
+.hero-actions .btn {
+  padding: 1rem 2.25rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .hero-status-pill {
@@ -727,34 +738,37 @@ ul, ol {
   justify-content: flex-end;
   align-items: flex-end;
   opacity: 0;
-  transform: translateX(40px) scale(0.97);
+  transform: translateX(40px);
   animation: heroRunnerEnter 1.2s var(--ease-cinematic) 0.3s forwards;
-  margin-bottom: -5px;
+  margin-bottom: -10px;
 }
 
 .hero-runner-img {
   width: auto;
-  max-width: 100%;
-  height: clamp(500px, 80vh, 840px);
-  max-height: calc(100vh - 95px);
-  max-height: calc(100dvh - 95px);
+  max-width: 125%;
+  height: clamp(600px, 88vh, 980px);
+  max-height: calc(100vh - 85px);
+  max-height: calc(100dvh - 85px);
   object-fit: contain;
   object-position: bottom right;
-  filter: drop-shadow(0 25px 55px rgba(0, 0, 0, 0.13));
+  filter: drop-shadow(0 30px 65px rgba(0, 0, 0, 0.16));
   user-select: none;
   pointer-events: none;
+  transform: scale(1.12);
+  transform-origin: bottom right;
 }
 
 /* Hero Background Watermark Typography (Spanning Behind Athlete in Lower Half) */
 .hero-bg-watermark {
   position: absolute;
-  bottom: -2%;
-  left: 22%;
+  bottom: -4%;
+  left: 16%;
   font-family: var(--font-display);
-  font-size: clamp(8.5rem, 18vw, 21rem);
-  line-height: 0.8;
-  letter-spacing: -0.01em;
-  color: rgba(0, 0, 0, 0.055);
+  font-size: clamp(12rem, 25vw, 30rem);
+  line-height: 0.75;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.075);
+  font-weight: 900;
   user-select: none;
   pointer-events: none;
   z-index: 1;
