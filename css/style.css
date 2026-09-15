@@ -619,12 +619,12 @@ ul, ol {
 }
 
 .hero-headline {
-  font-size: clamp(4.5rem, 8vw, 8.8rem);
-  line-height: 0.85;
+  font-size: clamp(4.2rem, 7.5vw, 8.2rem);
+  line-height: 0.88;
   margin-bottom: clamp(1rem, 2vh, 1.5rem);
   color: var(--text-primary);
   overflow: hidden;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: 900;
 }
