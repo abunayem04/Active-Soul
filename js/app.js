@@ -419,6 +419,53 @@ function initAdmissionForm() {
 }
 
 /* ==========================================================================
+   10.1 BKASH NUMBER CLIPBOARD COPY HELPER
+   ========================================================================== */
+function copyBkashNumber(btn) {
+  const number = '01821266257';
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(number).then(() => {
+      showCopiedState(btn);
+    }).catch(() => {
+      fallbackCopyText(number, btn);
+    });
+  } else {
+    fallbackCopyText(number, btn);
+  }
+}
+
+function fallbackCopyText(text, btn) {
+  const textArea = document.createElement('textarea');
+  textArea.value = text;
+  textArea.style.position = 'fixed';
+  textArea.style.left = '-999999px';
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  try {
+    document.execCommand('copy');
+    showCopiedState(btn);
+  } catch (err) {
+    console.error('Fallback copy error:', err);
+  }
+  document.body.removeChild(textArea);
+}
+
+function showCopiedState(btn) {
+  if (!btn) return;
+  const textSpan = btn.querySelector('.copy-text') || btn;
+  const originalText = textSpan.innerText;
+  textSpan.innerText = 'COPIED!';
+  btn.style.backgroundColor = '#22c55e';
+  btn.style.color = '#FFFFFF';
+  setTimeout(() => {
+    textSpan.innerText = originalText;
+    btn.style.backgroundColor = '';
+    btn.style.color = '';
+  }, 2000);
+}
+
+/* ==========================================================================
    11. INTERACTIVE ONBOARDING ASSESSMENT MODAL
    ========================================================================== */
 let currentModalStep = 1;
