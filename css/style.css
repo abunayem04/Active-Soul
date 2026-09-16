@@ -2098,14 +2098,47 @@ ul, ol {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
   padding-top: 2rem;
   border-top: 1px solid var(--border-light);
   font-size: 0.8125rem;
   color: var(--text-muted);
 }
 
+.footer-copyright-text {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  line-height: 1.6;
+}
+
+.footer-credit-sep {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.footer-credit-link {
+  color: var(--text-primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--accent-lime);
+  transition: all var(--transition-fast);
+}
+
+.footer-credit-link:hover {
+  color: #000000;
+  background-color: var(--accent-lime);
+  text-decoration: none;
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
 .footer-legal-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.75rem;
 }
 
