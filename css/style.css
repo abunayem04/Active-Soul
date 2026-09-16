@@ -2586,8 +2586,7 @@ ul, ol {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* --- DUAL-ROW BI-DIRECTIONAL TESTIMONIAL MARQUEE --- */
-.testimonials-marquee-wrapper {
+/* --- DUAL-ROW BI-DIRECTIONAL TESTIMONIAL MARQUEE --- */.testimonials-marquee-wrapper {
   position: relative;
   width: 100vw;
   max-width: 100%;
@@ -2595,58 +2594,62 @@ ul, ol {
   contain: paint;
   margin: 1.5rem 0 3.5rem 0;
   padding: 0.75rem 0;
-  mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
 }
 
 .marquee-row {
   display: flex;
   width: 100%;
   overflow: hidden;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
   user-select: none;
+  gap: 1.5rem;
 }
 
 .marquee-row:last-child {
   margin-bottom: 0;
 }
 
-.marquee-track {
+.marquee-group {
+  flex-shrink: 0;
   display: flex;
+  align-items: stretch;
   gap: 1.5rem;
-  width: max-content;
+  min-width: 100%;
   will-change: transform;
 }
 
-.marquee-track:hover {
+/* Row 1: Right to Left infinite scroll */
+.marquee-row-left .marquee-group {
+  animation: marqueeScrollLeft 42s linear infinite;
+}
+
+/* Row 2: Left to Right infinite scroll */
+.marquee-row-right .marquee-group {
+  animation: marqueeScrollRight 42s linear infinite;
+}
+
+/* Pause on hover so users can easily read cards */
+.marquee-row:hover .marquee-group {
   animation-play-state: paused;
 }
 
-/* Row 1: Right to Left (डান থেকে বামে) */
-.track-left {
-  animation: marqueeLeft 38s linear infinite;
-}
-
-/* Row 2: Left to Right (বাম থেকে ডানে) */
-.track-right {
-  animation: marqueeRight 38s linear infinite;
-}
-
-@keyframes marqueeLeft {
+@keyframes marqueeScrollLeft {
   0% {
-    transform: translateX(0%);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(calc(-100% - 1.5rem), 0, 0);
   }
 }
 
-@keyframes marqueeRight {
+@keyframes marqueeScrollRight {
   0% {
-    transform: translateX(-50%);
+    transform: translate3d(calc(-100% - 1.5rem), 0, 0);
   }
   100% {
-    transform: translateX(0%);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -3722,11 +3725,30 @@ ul, ol {
   }
 
   .marquee-row {
-    margin-bottom: 1.25rem;
+    gap: 1rem;
+    margin-bottom: 1.15rem;
   }
 
-  .marquee-track {
+  .marquee-group {
     gap: 1rem;
+  }
+
+  @keyframes marqueeScrollLeft {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(calc(-100% - 1rem), 0, 0);
+    }
+  }
+
+  @keyframes marqueeScrollRight {
+    0% {
+      transform: translate3d(calc(-100% - 1rem), 0, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   .feedback-card {
