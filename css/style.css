@@ -74,7 +74,7 @@ html {
   background-color: var(--bg-main);
   color: var(--text-primary);
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
   width: 100%;
 }
@@ -106,7 +106,7 @@ body {
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-main);
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
   width: 100%;
   position: relative;
@@ -1109,17 +1109,25 @@ ul, ol {
   grid-template-columns: 0.9fr 1.1fr;
   gap: clamp(2.5rem, 6vw, 6rem);
   align-items: flex-start;
+  position: relative;
 }
 
 .system-sticky-col {
+  position: -webkit-sticky;
   position: sticky;
-  top: 120px;
+  top: clamp(80px, 12vh, 120px);
+  align-self: flex-start;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 2;
+  will-change: transform;
 }
 
 .system-steps-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
   position: relative;
 }
 
@@ -2431,7 +2439,7 @@ ul, ol {
 
 .reveal-on-scroll.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* --- BATCH 8 SPOTLIGHT CARD --- */
