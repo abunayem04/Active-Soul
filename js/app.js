@@ -366,9 +366,20 @@ function initAdmissionForm() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('applicantName').value.trim();
-    const phone = document.getElementById('applicantPhone').value.trim();
-    
+    const nameEl = document.getElementById('applicantName');
+    const phoneEl = document.getElementById('applicantPhone');
+    const goalEl = document.getElementById('applicantGoal');
+    const placeEl = document.getElementById('applicantPlace');
+    const paymentEl = document.getElementById('applicantPayment');
+    const notesEl = document.getElementById('applicantNotes');
+
+    const name = nameEl ? nameEl.value.trim() : '';
+    const phone = phoneEl ? phoneEl.value.trim() : '';
+    const goal = goalEl ? goalEl.value : '';
+    const place = placeEl ? placeEl.value : '';
+    const payment = paymentEl ? paymentEl.value.trim() : 'N/A';
+    const notes = notesEl ? notesEl.value.trim() : '';
+
     // Get selected radio button for gender
     let gender = '';
     const genderRadios = document.getElementsByName('applicantGender');
@@ -379,13 +390,13 @@ function initAdmissionForm() {
       }
     }
 
-    const goal = document.getElementById('applicantGoal').value;
-    const place = document.getElementById('applicantPlace').value;
-    const payment = document.getElementById('applicantPayment').value.trim();
-    const notes = document.getElementById('applicantNotes').value.trim();
-
     // Create WhatsApp message URI with all data
-    const message = `Assalamu Alaikum Active Soul Team,\nI have paid 5,000 BDT for Batch 8. Here are my registration details:\n\nName: ${name}\nGender: ${gender}\nWhatsApp: ${phone}\nGoal: ${goal}\nLocation: ${place}\nMedical Notes: ${notes || 'N/A'}\n\nbKash Payment (TrxID/Last Digits): ${payment}\n\nPlease verify my payment and add me to the respective group. Thank you!`;
+    let message = '';
+    if (paymentEl) {
+      message = `Assalamu Alaikum Active Soul Team,\nI have paid 5,000 BDT for Batch 8. Here are my registration details:\n\nName: ${name}\nGender: ${gender || 'Not specified'}\nWhatsApp: ${phone}\nGoal: ${goal}\nLocation: ${place}\nMedical Notes: ${notes || 'N/A'}\n\nbKash Payment (TrxID/Last Digits): ${payment}\n\nPlease verify my payment and add me to the respective group. Thank you!`;
+    } else {
+      message = `Assalamu Alaikum Active Soul Team,\nI would like to enquire / enroll into Active Soul:\n\nName: ${name}\nWhatsApp: ${phone}\nGoal: ${goal}\nLocation: ${place}\nNotes: ${notes || 'N/A'}\n\nLooking forward to hearing from you!`;
+    }
     const encodedMsg = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/8801612091069?text=${encodedMsg}`;
 
