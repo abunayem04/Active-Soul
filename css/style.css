@@ -2650,54 +2650,53 @@ ul, ol {
   }
 }
 
-/* --- FEEDBACK CARD STYLES --- */
+/* --- FEEDBACK CARD STYLES (COMPACT WIDE HORIZONTAL) --- */
 .feedback-card {
   position: relative;
-  width: 380px;
+  width: 440px;
   max-width: 86vw;
   background: #0E0E0E;
-  border: 1px solid rgba(229, 169, 60, 0.22);
-  border-radius: 20px;
-  padding: 1.85rem 1.65rem 1.45rem 1.65rem;
+  border: 1px solid rgba(229, 169, 60, 0.2);
+  border-radius: 14px;
+  padding: 1.15rem 1.3rem 0.95rem 1.3rem;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+  justify-content: space-between;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease, box-shadow 0.28s ease;
   flex-shrink: 0;
-  text-align: center;
+  text-align: left;
 }
 
 .feedback-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(229, 169, 60, 0.6);
-  box-shadow: 0 20px 44px rgba(229, 169, 60, 0.14), 0 14px 32px rgba(0, 0, 0, 0.75);
+  transform: translateY(-4px);
+  border-color: rgba(229, 169, 60, 0.55);
+  box-shadow: 0 16px 36px rgba(229, 169, 60, 0.12), 0 12px 28px rgba(0, 0, 0, 0.7);
 }
 
-/* Top-Right Inverted Comma Quotation Icon (as requested) */
-.feedback-quote-icon {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.35rem;
-  color: #E5A93C;
-  opacity: 0.85;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-  pointer-events: none;
+.feedback-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
-.feedback-card:hover .feedback-quote-icon {
-  opacity: 1;
-  transform: scale(1.12);
+.feedback-user-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
 }
 
 /* Avatar Ring */
 .feedback-avatar-ring {
-  width: 76px;
-  height: 76px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  border: 2px solid #E5A93C;
-  padding: 2.5px;
-  box-shadow: 0 0 18px rgba(229, 169, 60, 0.3);
-  margin: 0 auto 0.65rem auto;
+  border: 1.5px solid #E5A93C;
+  padding: 2px;
+  box-shadow: 0 0 12px rgba(229, 169, 60, 0.25);
   overflow: hidden;
   background: #000000;
   flex-shrink: 0;
@@ -2711,97 +2710,124 @@ ul, ol {
   display: block;
 }
 
-/* 5 Gold Stars Rating */
-.feedback-stars {
-  color: #FBBF24;
-  font-size: 1rem;
-  letter-spacing: 0.18em;
-  text-align: center;
-  margin-bottom: 0.65rem;
+.feedback-user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
 }
 
-/* Batch & Metric Badge */
-.feedback-badge-wrap {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.feedback-badge {
-  display: inline-block;
-  background: rgba(229, 169, 60, 0.08);
-  border: 1px solid rgba(229, 169, 60, 0.35);
-  color: #E5A93C;
-  border-radius: 9999px;
-  padding: 0.32rem 0.85rem;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-}
-
-/* Quote Box */
-.feedback-quote-box {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 12px;
-  padding: 1.05rem 1.15rem;
-  margin-bottom: 1.15rem;
-  flex-grow: 1;
+.feedback-name-line {
   display: flex;
   align-items: center;
-}
-
-.feedback-quote-text {
-  font-size: 0.86rem;
-  line-height: 1.6;
-  color: #D6D6D6;
-  margin: 0;
-  text-align: left;
-  font-style: normal;
-}
-
-/* Author Info */
-.feedback-author {
-  text-align: center;
-  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .feedback-author-name {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 0.92rem;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   color: #FFFFFF;
-  margin: 0 0 0.15rem 0;
-  text-transform: uppercase;
-}
-
-.feedback-author-meta {
-  font-size: 0.78rem;
-  color: #9CA3AF;
   margin: 0;
+  text-transform: uppercase;
+  line-height: 1.2;
 }
 
-/* Mini Brand Footer */
-.feedback-brand-footer {
-  display: flex;
+.feedback-badge-pill {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  padding-top: 0.65rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(229, 169, 60, 0.12);
+  border: 1px solid rgba(229, 169, 60, 0.35);
+  color: #E5A93C;
   font-family: var(--font-mono);
   font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.42);
+  font-weight: 700;
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
-.feedback-mini-logo {
-  height: 12px;
-  width: auto;
-  opacity: 0.6;
+.feedback-sub-line {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  line-height: 1.2;
+}
+
+.feedback-author-role {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.feedback-sep {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.65rem;
+}
+
+/* 5 Gold Stars */
+.feedback-stars {
+  color: #FBBF24;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+/* Quote Icon */
+.feedback-quote-icon {
+  color: #E5A93C;
+  opacity: 0.75;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.feedback-card:hover .feedback-quote-icon {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+/* Quote Body */
+.feedback-quote-text {
+  font-size: 0.835rem;
+  line-height: 1.5;
+  color: #D1D5DB;
+  margin: 0 0 0.8rem 0;
+  text-align: left;
+  font-style: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card Footer */
+.feedback-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.55rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  gap: 0.5rem;
+}
+
+.feedback-metric-text {
+  color: #E5A93C;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.feedback-program-tag {
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* --- RESULTS ACTION BOX --- */
@@ -3706,55 +3732,58 @@ ul, ol {
   .feedback-card {
     width: 320px;
     max-width: 86vw;
-    padding: 1.4rem 1.2rem 1.15rem 1.2rem;
-    border-radius: 16px;
+    padding: 0.95rem 1.05rem 0.8rem 1.05rem;
+    border-radius: 12px;
   }
 
-  .feedback-quote-icon {
-    top: 1rem;
-    right: 1.1rem;
+  .feedback-card-header {
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
   }
 
-  .feedback-quote-icon svg {
-    width: 20px;
-    height: 20px;
+  .feedback-user-group {
+    gap: 0.6rem;
   }
 
   .feedback-avatar-ring {
-    width: 66px;
-    height: 66px;
-    margin-bottom: 0.5rem;
-  }
-
-  .feedback-stars {
-    font-size: 0.88rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .feedback-badge {
-    font-size: 0.64rem;
-    padding: 0.25rem 0.65rem;
-    white-space: normal;
-    text-align: center;
-    line-height: 1.35;
-  }
-
-  .feedback-quote-box {
-    padding: 0.85rem 0.95rem;
-    margin-bottom: 0.85rem;
-  }
-
-  .feedback-quote-text {
-    font-size: 0.8125rem;
-    line-height: 1.55;
+    width: 40px;
+    height: 40px;
+    border-width: 1.5px;
+    box-shadow: 0 0 8px rgba(229, 169, 60, 0.2);
   }
 
   .feedback-author-name {
-    font-size: 0.92rem;
+    font-size: 0.84rem;
   }
 
-  .feedback-author-meta {
-    font-size: 0.74rem;
+  .feedback-badge-pill {
+    font-size: 0.58rem;
+    padding: 0.08rem 0.35rem;
+  }
+
+  .feedback-sub-line {
+    font-size: 0.68rem;
+    gap: 0.3rem;
+  }
+
+  .feedback-stars {
+    font-size: 0.7rem;
+  }
+
+  .feedback-quote-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .feedback-quote-text {
+    font-size: 0.775rem;
+    line-height: 1.45;
+    margin-bottom: 0.65rem;
+  }
+
+  .feedback-card-footer {
+    font-size: 0.62rem;
+    padding-top: 0.45rem;
   }
 
   .results-action-box {
