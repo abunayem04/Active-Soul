@@ -368,20 +368,32 @@ function initAdmissionForm() {
 
     const name = document.getElementById('applicantName').value.trim();
     const phone = document.getElementById('applicantPhone').value.trim();
+    
+    // Get selected radio button for gender
+    let gender = '';
+    const genderRadios = document.getElementsByName('applicantGender');
+    for (const radio of genderRadios) {
+      if (radio.checked) {
+        gender = radio.value;
+        break;
+      }
+    }
+
     const goal = document.getElementById('applicantGoal').value;
     const place = document.getElementById('applicantPlace').value;
+    const payment = document.getElementById('applicantPayment').value.trim();
     const notes = document.getElementById('applicantNotes').value.trim();
 
-    // Create WhatsApp message URI
-    const message = `Assalamu Alaikum Active Soul Team,\nI want to enroll in Batch 8 (90-Day Transformation).\n\nName: ${name}\nPhone: ${phone}\nGoal: ${goal}\nLocation: ${place}\nNotes: ${notes || 'N/A'}`;
+    // Create WhatsApp message URI with all data
+    const message = `Assalamu Alaikum Active Soul Team,\nI have paid 5,000 BDT for Batch 8. Here are my registration details:\n\nName: ${name}\nGender: ${gender}\nWhatsApp: ${phone}\nGoal: ${goal}\nLocation: ${place}\nMedical Notes: ${notes || 'N/A'}\n\nbKash Payment (TrxID/Last Digits): ${payment}\n\nPlease verify my payment and add me to the respective group. Thank you!`;
     const encodedMsg = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/8801700000000?text=${encodedMsg}`;
+    const whatsappUrl = `https://wa.me/8801612091069?text=${encodedMsg}`;
 
     // Provide friendly confirmation
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
 
-    submitBtn.innerHTML = `✓ ENQUIRY RECORDED! REDIRECTING...`;
+    submitBtn.innerHTML = `✓ PROCESSING... REDIRECTING TO WHATSAPP`;
     submitBtn.style.backgroundColor = '#15803d';
     submitBtn.style.color = '#FFFFFF';
 
