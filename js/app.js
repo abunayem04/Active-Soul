@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initScrollReveals();
   initGoalPanels();
+  initCtaSmoothScroll();
   initMethodologySteps();
   initCompareSlider();
   initFaqAccordion();
@@ -164,7 +165,7 @@ function initGoalPanels() {
   panels.forEach(panel => {
     panel.addEventListener('click', () => {
       const goalName = panel.getAttribute('data-goal');
-      openAssessmentModalWithGoal(goalName);
+      scrollToRegistrationForm(goalName);
     });
   });
 }
@@ -482,6 +483,79 @@ function showCopiedState(btn) {
 }
 
 /* ==========================================================================
+   10.2 ALL CTAS SMOOTH SCROLL & AUTO-SELECT FORM HANDLER
+   ========================================================================== */
+function initCtaSmoothScroll() {
+  const formTriggers = document.querySelectorAll(
+    'a[href="#batch8"], a[href="#enroll"], a[href="#contact"], a[href="#batch8AdmissionForm"], [data-scroll-form], [data-trigger-assessment]'
+  );
+
+  formTriggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const goal = btn.getAttribute('data-goal');
+      scrollToRegistrationForm(goal);
+    });
+  });
+}
+
+function scrollToRegistrationForm(presetGoal = null) {
+  const formSection = document.getElementById('batch8') || document.getElementById('enroll') || document.getElementById('batch8AdmissionForm');
+  if (!formSection) return;
+
+  // Close mobile drawer if open
+  const drawer = document.getElementById('mobileDrawer');
+  const backdrop = document.getElementById('drawerBackdrop');
+  if (drawer && drawer.classList.contains('open')) {
+    drawer.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Pre-select goal in dropdown if provided
+  if (presetGoal) {
+    const goalSelect = document.getElementById('applicantGoal');
+    if (goalSelect) {
+      for (let i = 0; i < goalSelect.options.length; i++) {
+        const optVal = goalSelect.options[i].value.toLowerCase();
+        const goalLower = presetGoal.toLowerCase();
+        if (optVal.includes(goalLower) || goalLower.includes(optVal)) {
+          goalSelect.selectedIndex = i;
+          break;
+        }
+      }
+    }
+  }
+
+  // Smooth scroll using Lenis or native smooth scroll
+  const formEl = document.getElementById('batch8AdmissionForm') || formSection;
+  if (typeof lenis !== 'undefined' && lenis) {
+    lenis.scrollTo(formEl, { offset: -90, duration: 1.2 });
+  } else {
+    formEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Subtle luminous feedback border/glow on form
+  if (formEl) {
+    formEl.style.transition = 'box-shadow 0.4s ease, border-color 0.4s ease';
+    formEl.style.borderColor = 'var(--accent-lime)';
+    formEl.style.boxShadow = '0 0 35px rgba(182, 255, 0, 0.35)';
+    setTimeout(() => {
+      formEl.style.borderColor = '';
+      formEl.style.boxShadow = '';
+    }, 2000);
+  }
+
+  // Auto focus on name input field
+  setTimeout(() => {
+    const nameInput = document.getElementById('applicantName');
+    if (nameInput) {
+      nameInput.focus();
+    }
+  }, 700);
+}
+
+/* ==========================================================================
    11. INTERACTIVE ONBOARDING ASSESSMENT MODAL
    ========================================================================== */
 let currentModalStep = 1;
@@ -491,7 +565,7 @@ let selectedEnvironment = 'HOME WORKOUT';
 function initAssessmentModal() {
   const modalOverlay = document.getElementById('assessmentModal');
   const closeBtn = document.getElementById('modalCloseBtn');
-  const triggerBtns = document.querySelectorAll('[data-trigger-assessment]');
+  const triggerBtns = document.querySelectorAll('[data-open-modal]');
 
   if (!modalOverlay || !closeBtn) return;
 
