@@ -204,20 +204,48 @@
                 <p style="margin-bottom: 0.35rem; color: var(--text-primary);"><strong style="color: var(--text-primary);">• September 25 Onwards:</strong> Preparation & Onboarding Phase</p>
                 <p style="margin: 0; color: var(--text-primary);"><strong style="color: var(--text-primary);">• October 1:</strong> Official 90-Day Transformation Journey Begins</p>
               </div>
+
+              <div class="contact-methods-list">
+                <a href="mailto:activesoul.official@gmail.com" class="contact-method-card">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <div>
+                    <div class="c-title">OFFICIAL EMAIL</div>
+                    <div class="c-val">activesoul.official@gmail.com</div>
+                  </div>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61584693667241" target="_blank" rel="noopener noreferrer" class="contact-method-card">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                  </svg>
+                  <div>
+                    <div class="c-title">FACEBOOK PAGE</div>
+                    <div class="c-val">Active Soul (6.1K Community)</div>
+                  </div>
+                </a>
+              </div>
             </div>
+
           </div>
 
           <div class="admission-form-col">
             <form class="admission-form" id="batch8AdmissionForm">
-              <h3 class="form-title">BATCH 8 REGISTRATION</h3>
+              <h3 class="form-title">BATCH 8 REGISTRATION & ASSESSMENT</h3>
               
+              <!-- SECTION 1: ATHLETE PROFILE -->
+              <div class="form-section-heading" style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 1rem 0; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border-light);">
+                01 // ATHLETE PROFILE
+              </div>
+
               <div class="form-group">
                 <label for="applicantName" class="form-label">Full Name *</label>
                 <input type="text" id="applicantName" class="form-input" placeholder="e.g. Abdullah Al Mamun" required>
               </div>
 
               <div class="form-group">
-                <label for="applicantPhone" class="form-label">WhatsApp Number *</label>
+                <label for="applicantPhone" class="form-label">WhatsApp Contact Number *</label>
                 <input type="tel" id="applicantPhone" class="form-input" placeholder="e.g. +880 17XXXXXXXX" required>
               </div>
 
@@ -235,7 +263,34 @@
 
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                 <div class="form-group">
-                  <label for="applicantGoal" class="form-label">Goal *</label>
+                  <label for="applicantAge" class="form-label">Age (Years) *</label>
+                  <input type="number" id="applicantAge" class="form-input" placeholder="e.g. 25" min="14" max="80" required>
+                </div>
+                <div class="form-group">
+                  <label for="applicantHeight" class="form-label">Height *</label>
+                  <input type="text" id="applicantHeight" class="form-input" placeholder="e.g. 5 ft 9 in" required>
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label for="applicantWeight" class="form-label">Current Weight (kg) *</label>
+                  <input type="number" id="applicantWeight" class="form-input" placeholder="e.g. 78" step="0.1" required>
+                </div>
+                <div class="form-group">
+                  <label for="applicantTargetWeight" class="form-label">Target Weight (kg)</label>
+                  <input type="number" id="applicantTargetWeight" class="form-input" placeholder="e.g. 68" step="0.1">
+                </div>
+              </div>
+
+              <!-- SECTION 2: TRAINING & NUTRITION PROTOCOL -->
+              <div class="form-section-heading" style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; margin: 1.5rem 0 1rem 0; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border-light);">
+                02 // TRAINING & NUTRITION PROTOCOL
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label for="applicantGoal" class="form-label">Primary Goal *</label>
                   <select id="applicantGoal" class="form-select" required>
                     <option value="" disabled selected>Select goal...</option>
                     <option value="Weight Loss">Weight Loss (Fat Loss & Stamina)</option>
@@ -244,7 +299,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="applicantPlace" class="form-label">Location *</label>
+                  <label for="applicantPlace" class="form-label">Training Location *</label>
                   <select id="applicantPlace" class="form-select" required>
                     <option value="" disabled selected>Select place...</option>
                     <option value="Home Workout">Home Workout (Bodyweight / Dumbbells)</option>
@@ -253,17 +308,63 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="applicantPayment" class="form-label">bKash TrxID / Sender Last 4 Digits *</label>
-                <input type="text" id="applicantPayment" class="form-input" placeholder="Enter TrxID or last 4 digits after Send Money" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="applicantNotes" class="form-label">Medical Notes / Past Injuries (If any)</label>
-                <input type="text" id="applicantNotes" class="form-input" placeholder="Please list any injuries, medical conditions, or dietary notes...">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label for="applicantActivity" class="form-label">Daily Activity Level</label>
+                  <select id="applicantActivity" class="form-select">
+                    <option value="Sedentary (Desk Job / Little Movement)" selected>Sedentary (Desk Job)</option>
+                    <option value="Lightly Active (1-3k steps/day)">Lightly Active</option>
+                    <option value="Moderately Active (5-8k steps/day)">Moderately Active</option>
+                    <option value="Very Active (Physical Labor / High Movement)">Very Active</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="applicantExperience" class="form-label">Fitness Experience</label>
+                  <select id="applicantExperience" class="form-select">
+                    <option value="Complete Beginner (0-6 Months)" selected>Beginner (0-6 Mo)</option>
+                    <option value="Intermediate (1-2 Years)">Intermediate (1-2 Yrs)</option>
+                    <option value="Advanced (3+ Years)">Advanced (3+ Yrs)</option>
+                  </select>
+                </div>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 1rem; padding: 1rem 1.5rem;">
+              <div class="form-group">
+                <label for="applicantDiet" class="form-label">Dietary Habit & Preference</label>
+                <select id="applicantDiet" class="form-select">
+                  <option value="Standard Balanced Halal Diet" selected>Standard Balanced Halal Diet</option>
+                  <option value="Budget Student Friendly Diet">Budget Student Friendly Diet</option>
+                  <option value="High Protein Lean Bulk Diet">High Protein Lean Bulk Diet</option>
+                  <option value="Vegetarian / Plant-Forward">Vegetarian / Plant-Forward</option>
+                </select>
+              </div>
+
+              <!-- SECTION 3: HEALTH & MEDICAL HISTORY -->
+              <div class="form-section-heading" style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; margin: 1.5rem 0 1rem 0; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border-light);">
+                03 // MEDICAL & COACHING NOTES
+              </div>
+
+              <div class="form-group">
+                <label for="applicantNotes" class="form-label">Medical History, Past Injuries or Allergies</label>
+                <textarea id="applicantNotes" class="form-textarea" rows="2" placeholder="List any past injuries (knee, back, shoulder), medical conditions, or food allergies..."></textarea>
+              </div>
+
+              <!-- SECTION 4: PAYMENT VERIFICATION -->
+              <div class="form-section-heading" style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; margin: 1.5rem 0 1rem 0; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border-light);">
+                04 // PAYMENT VERIFICATION
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label for="applicantPayment" class="form-label">bKash TrxID / Sender Last 4 Digits *</label>
+                  <input type="text" id="applicantPayment" class="form-input" placeholder="e.g. 9J8K2L1M or 6257" required>
+                </div>
+                <div class="form-group">
+                  <label for="applicantSenderNumber" class="form-label">Sender bKash No. (Opt.)</label>
+                  <input type="tel" id="applicantSenderNumber" class="form-input" placeholder="017XXXXXXXX">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 1rem; padding: 1.1rem 1.5rem; margin-top: 0.5rem;">
                 COMPLETE REGISTRATION VIA WHATSAPP →
               </button>
               

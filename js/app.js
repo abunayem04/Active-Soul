@@ -368,16 +368,32 @@ function initAdmissionForm() {
 
     const nameEl = document.getElementById('applicantName');
     const phoneEl = document.getElementById('applicantPhone');
+    const ageEl = document.getElementById('applicantAge');
+    const weightEl = document.getElementById('applicantWeight');
+    const heightEl = document.getElementById('applicantHeight');
+    const targetWeightEl = document.getElementById('applicantTargetWeight');
     const goalEl = document.getElementById('applicantGoal');
     const placeEl = document.getElementById('applicantPlace');
+    const activityEl = document.getElementById('applicantActivity');
+    const experienceEl = document.getElementById('applicantExperience');
+    const dietEl = document.getElementById('applicantDiet');
     const paymentEl = document.getElementById('applicantPayment');
+    const senderNumEl = document.getElementById('applicantSenderNumber');
     const notesEl = document.getElementById('applicantNotes');
 
     const name = nameEl ? nameEl.value.trim() : '';
     const phone = phoneEl ? phoneEl.value.trim() : '';
+    const age = ageEl ? ageEl.value.trim() : 'N/A';
+    const weight = weightEl ? weightEl.value.trim() : 'N/A';
+    const height = heightEl ? heightEl.value.trim() : 'N/A';
+    const targetWeight = targetWeightEl ? targetWeightEl.value.trim() : 'N/A';
     const goal = goalEl ? goalEl.value : '';
     const place = placeEl ? placeEl.value : '';
+    const activity = activityEl ? activityEl.value : 'N/A';
+    const experience = experienceEl ? experienceEl.value : 'N/A';
+    const diet = dietEl ? dietEl.value : 'N/A';
     const payment = paymentEl ? paymentEl.value.trim() : 'N/A';
+    const senderNum = senderNumEl ? senderNumEl.value.trim() : '';
     const notes = notesEl ? notesEl.value.trim() : '';
 
     // Get selected radio button for gender
@@ -390,12 +406,12 @@ function initAdmissionForm() {
       }
     }
 
-    // Create WhatsApp message URI with all data
+    // Create structured WhatsApp message with full client assessment profile
     let message = '';
     if (paymentEl) {
-      message = `Assalamu Alaikum Active Soul Team,\nI have paid 5,000 BDT for Batch 8. Here are my registration details:\n\nName: ${name}\nGender: ${gender || 'Not specified'}\nWhatsApp: ${phone}\nGoal: ${goal}\nLocation: ${place}\nMedical Notes: ${notes || 'N/A'}\n\nbKash Payment (TrxID/Last Digits): ${payment}\n\nPlease verify my payment and add me to the respective group. Thank you!`;
+      message = `Assalamu Alaikum Active Soul Team,\nI have paid 5,000 BDT for Batch 8. Here are my registration and assessment details:\n\n📋 PERSONAL PROFILE:\n• Name: ${name}\n• Gender: ${gender || 'Not specified'}\n• WhatsApp: ${phone}\n• Age: ${age}\n• Height: ${height}\n• Current Weight: ${weight} kg\n• Target Goal Weight: ${targetWeight} kg\n\n🎯 TRAINING & NUTRITION:\n• Primary Goal: ${goal}\n• Training Location: ${place}\n• Daily Activity: ${activity}\n• Experience: ${experience}\n• Dietary Preference: ${diet}\n\n🏥 MEDICAL & INJURIES:\n• Notes: ${notes || 'None'}\n\n💳 PAYMENT VERIFICATION:\n• bKash TrxID / Last 4 Digits: ${payment}\n${senderNum ? `• bKash Sender Account: ${senderNum}\n` : ''}\nPlease verify my payment and enroll me in Batch 8. Thank you!`;
     } else {
-      message = `Assalamu Alaikum Active Soul Team,\nI would like to enquire / enroll into Active Soul:\n\nName: ${name}\nWhatsApp: ${phone}\nGoal: ${goal}\nLocation: ${place}\nNotes: ${notes || 'N/A'}\n\nLooking forward to hearing from you!`;
+      message = `Assalamu Alaikum Active Soul Team,\nI would like to enquire / enroll into Active Soul:\n\nName: ${name}\nWhatsApp: ${phone}\nGoal: ${goal}\nLocation: ${place}\nNotes: ${notes || 'None'}\n\nLooking forward to hearing from you!`;
     }
     const encodedMsg = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/8801612091069?text=${encodedMsg}`;
